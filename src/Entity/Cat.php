@@ -20,11 +20,13 @@ class Cat
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?int $breedId = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Breed $breed = null;
 
-    #[ORM\Column]
-    private ?int $genderId = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Gender $gender = null;
 
     public function getId(): ?int
     {
@@ -55,26 +57,26 @@ class Cat
         return $this;
     }
 
-    public function getBreedId(): ?int
+    public function getBreed(): ?Breed
     {
-        return $this->breedId;
+        return $this->breed;
     }
 
-    public function setBreedId(int $breedId): static
+    public function setBreed(Breed $breed): static
     {
-        $this->breedId = $breedId;
+        $this->breed = $breed;
 
         return $this;
     }
 
-    public function getGenderId(): ?int
+    public function getGender(): ?Gender
     {
-        return $this->genderId;
+        return $this->gender;
     }
 
-    public function setGenderId(int $genderId): static
+    public function setGender(Gender $gender): static
     {
-        $this->genderId = $genderId;
+        $this->gender = $gender;
 
         return $this;
     }

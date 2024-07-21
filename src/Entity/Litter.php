@@ -20,16 +20,17 @@ class Litter
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column]
-    private ?int $breedId = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Breed $breed = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Cat $catMotherId = null;
+    private ?Cat $catMother = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Cat $catFatherId = null;
+    private ?Cat $catFather = null;
 
     public function getId(): ?int
     {
@@ -60,38 +61,38 @@ class Litter
         return $this;
     }
 
-    public function getBreedId(): ?int
+    public function getBreed(): ?Breed
     {
-        return $this->breedId;
+        return $this->breed;
     }
 
-    public function setBreedId(int $breedId): static
+    public function setBreed(?Breed $breed): static
     {
-        $this->breedId = $breedId;
+        $this->breed = $breed;
 
         return $this;
     }
 
-    public function getCatMotherId(): ?Cat
+    public function getCatMother(): ?Cat
     {
-        return $this->catMotherId;
+        return $this->catMother;
     }
 
-    public function setCatMotherId(?Cat $catMotherId): static
+    public function setCatMother(?Cat $catMother): static
     {
-        $this->catMotherId = $catMotherId;
+        $this->catMother = $catMother;
 
         return $this;
     }
 
-    public function getCatFatherId(): ?Cat
+    public function getCatFather(): ?Cat
     {
-        return $this->catFatherId;
+        return $this->catFather;
     }
 
-    public function setCatFatherId(?Cat $catFatherId): static
+    public function setCatFather(?Cat $catFather): static
     {
-        $this->catFatherId = $catFatherId;
+        $this->catFather = $catFather;
 
         return $this;
     }

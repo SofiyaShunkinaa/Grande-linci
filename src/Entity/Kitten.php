@@ -18,18 +18,18 @@ class Kitten
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Breed $breedId = null;
+    private ?Breed $breed = null;
 
     #[ORM\Column(length: 255)]
     private ?string $KittenStatus = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Gender $genderId = null;
+    private ?Gender $gender = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Color $ColorId = null;
+    private ?Color $сolor = null;
 
     public function getId(): ?int
     {
@@ -48,14 +48,14 @@ class Kitten
         return $this;
     }
 
-    public function getBreedId(): ?Breed
+    public function getBreed(): ?Breed
     {
-        return $this->breedId;
+        return $this->breed;
     }
 
-    public function setBreedId(?Breed $breedId): static
+    public function setBreed(?Breed $breed): static
     {
-        $this->breedId = $breedId;
+        $this->breed = $breed;
 
         return $this;
     }
@@ -72,26 +72,26 @@ class Kitten
         return $this;
     }
 
-    public function getGenderId(): ?Gender
+    public function getGender(): ?Gender
     {
-        return $this->genderId;
+        return $this->gender;
     }
 
-    public function setGenderId(?Gender $genderId): static
+    public function setGender(?Gender $gender): static
     {
-        $this->genderId = $genderId;
+        $this->gender = $gender;
 
         return $this;
     }
 
-    public function getColorId(): ?Color
+    public function getColor(): ?Color
     {
-        return $this->ColorId;
+        return $this->color;
     }
 
-    public function setColorId(?Color $ColorId): static
+    public function setColor(?Color $color): static
     {
-        $this->ColorId = $ColorId;
+        $this->color = $color;
 
         return $this;
     }
