@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Cat;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class CatCrudController extends AbstractCrudController
@@ -20,8 +20,11 @@ class CatCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            TextEditorField::new('description'),
+            TextAreaField::new('description'),
             AssociationField::new('breed'),
+            AssociationField::new('gender'),
+            TextField::new('imageLink'),
+
         ];
     }
     
