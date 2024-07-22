@@ -28,6 +28,9 @@ class Cat
     #[ORM\JoinColumn(nullable: false)]
     private ?Gender $gender = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $imageLink = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +80,18 @@ class Cat
     public function setGender(Gender $gender): static
     {
         $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getImageLink(): ?string
+    {
+        return $this->imageLink;
+    }
+
+    public function setImageLink(?string $imageLink): static
+    {
+        $this->imageLink = $imageLink;
 
         return $this;
     }
