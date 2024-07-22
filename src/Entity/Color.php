@@ -16,8 +16,9 @@ class Color
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
-    private ?int $breedId = null;
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Breed $breed = null;
 
     public function getId(): ?int
     {
@@ -36,14 +37,14 @@ class Color
         return $this;
     }
 
-    public function getBreedId(): ?int
+    public function getBreed(): ?Breed
     {
-        return $this->breedId;
+        return $this->breed;
     }
 
-    public function setBreedId(int $breedId): static
+    public function setBreed(Breed $breed): static
     {
-        $this->breedId = $breedId;
+        $this->breed = $breed;
 
         return $this;
     }
