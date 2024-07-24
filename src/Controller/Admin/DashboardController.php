@@ -11,6 +11,7 @@ use App\Entity\Cat;
 use App\Entity\Color;
 use App\Entity\GuestRequest;
 use App\Entity\Kitten;
+use App\Entity\KittenStatus;
 use App\Entity\Litter;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
@@ -36,5 +37,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Guest requests', 'fas fa-list', GuestRequest::class);
         yield MenuItem::linkToCrud('Kittens', 'fas fa-list', Kitten::class);
         yield MenuItem::linkToCrud('Liters', 'fas fa-list', Litter::class);
+        yield MenuItem::linkToCrud('Kittens statuses', 'fas fa-list', KittenStatus::class);
     }
 }
