@@ -1,3 +1,31 @@
 body{
     background: #ff00ff;
+    font-family: Arial, sans-serif;
+    /* font-family: "Cormorant Garamond", serif; */
+}
+nav .logo{
+    font-family: "Charm", cursive;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 0;
+    color: var(--grey);
+}
+nav.navbar{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+main{
+    margin-top: 150px;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    color: var(--grey);
+    font-weight: 600;
+}
+.preheader .navbar-nav .nav-link{
+    color: var(--white);
+    font-weight: 400;
+}
+.preheader{
+    background: var(--grey);
 }
