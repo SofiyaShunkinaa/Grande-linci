@@ -16,7 +16,7 @@ nav.navbar{
     padding: 0;
 }
 main{
-    margin-top: 150px;
+    margin-top: 97px;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
     color: var(--grey);
@@ -25,7 +25,17 @@ main{
 .preheader .navbar-nav .nav-link{
     color: var(--white);
     font-weight: 400;
+    font-size: 14px;
 }
 .preheader{
     background: var(--grey);
+}
+.home-preview{
+   height: calc(100vh - 97px);
+   background-image: url(../img/background.webp);
+   background-size: cover;
+   background-repeat: no-repeat;
+}   
+.home{
+    height: 350px;
 }
