@@ -1,7 +1,6 @@
 body{
-    background: #ff00ff;
+    background: var(--green);
     font-family: Arial, sans-serif;
-    /* font-family: "Cormorant Garamond", serif; */
 }
 nav .logo{
     font-family: "Charm", cursive;
@@ -31,11 +30,54 @@ main{
     background: var(--grey);
 }
 .home-preview{
+    position: absolute;
    height: calc(100vh - 97px);
-   background-image: url(../img/background.webp);
+   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(../img/background.webp);
    background-size: cover;
    background-repeat: no-repeat;
+   z-index: 1;
+   /* filter: brightness(0.7) contrast(1.2); */
 }   
 .home{
     height: 350px;
+}
+.logo-group{
+    width: 650px;
+    margin-top: 140px;
+    overflow: hidden;
+    z-index: 2;
+}
+.logo-group::before{
+    content: '';
+    position: absolute;
+    width: 650px;
+    height: 214px;
+    filter: blur(10px);
+    background: radial-gradient(#ffffff40, #ffffff00);
+    /* backdrop-filter: blur(4px); */
+}
+.arrow-group{
+    width: 100%;
+}
+.arrow-end:last-of-type{
+    rotate: 180deg;
+}
+.arrow-body{
+    height: 2px;
+    width: 100%;
+    background: white;
+}
+h1{
+    font-size: 64px;
+    font-family: "Charm", cursive;
+    color: var(--white);
+    margin: 0;
+}
+.sublogo{
+    color: var(--white);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+}
+h1, .arrow-group, p{
+    z-index: 2;
 }
