@@ -81,3 +81,20 @@ h1{
 h1, .arrow-group, p{
     z-index: 2;
 }
+.down-link{
+    margin-bottom: 25px;
+}
+.down-link p{
+    font-size: 20px;
+    text-decoration: underline;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+.cat-preview.left{
+    top: 190px;
+    left: 50px;
+}
+.cat-preview.right{
+    top: 300px;
+    right: 0;
+}
