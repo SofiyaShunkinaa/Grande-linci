@@ -30,12 +30,10 @@ main{
     background: var(--grey);
 }
 .home-preview{
-    position: absolute;
    height: calc(100vh - 97px);
    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(../img/background.webp);
    background-size: cover;
    background-repeat: no-repeat;
-   z-index: 1;
    /* filter: brightness(0.7) contrast(1.2); */
 }   
 .home{
@@ -44,8 +42,6 @@ main{
 .logo-group{
     width: 650px;
     margin-top: 140px;
-    overflow: hidden;
-    z-index: 2;
 }
 .logo-group::before{
     content: '';
@@ -91,10 +87,26 @@ h1, .arrow-group, p{
     margin-bottom: 5px;
 }
 .cat-preview.left{
-    top: 190px;
+    top: 290px;
     left: 50px;
 }
 .cat-preview.right{
-    top: 300px;
+    top: 400px;
     right: 0;
+}
+.section-green{
+    background: var(--green);
+    color: var(--white);
+}
+h2{
+    font-size: 48px;
+}
+.section-green h2{
+    color: var(--green-light);
+}
+.title p{
+    font-size: 18px;
+}
+.title{
+    width: 660px;
 }
