@@ -23,14 +23,14 @@
     <div class="position-absolute cat-preview left"><img src="{{ asset('img/cat-1.webp') }}" alt="cat"></div>
     <div class="position-absolute cat-preview right"><img src="{{ asset('img/cat-2.webp') }}" alt="cat"></div>
 </div>
-<div class="container-fluid section-green">
-    <div class="title">
+<div class="container-fluid section-green section d-flex flex-column align-items-center justify-content-center">
+    <div class="title d-flex flex-column align-items-center justify-content-center">
     <h2>Welcome</h2>
     <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
     <p>Welcome to our cozy cattery, where the Maine Coon is not just a breed but an unforgettable story of love, care, and magnificence.</p>
     </div>
 
-    <div class="slider swiper">
+    <div class="slider swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
       <div class="swiper-slide">Slide 2</div>
@@ -46,7 +46,31 @@
     <div class="swiper-button-prev"></div>
     </div>
 </div>
-<div class="home container-fluid">
-<p>cvdsvcsd</p>
+<div class="section section-white container-fluid">
+    <div class="container">
+        <div class="title">
+        <h2>About us</h2>
+        </div>
+
+        <div class="section-inner d-flex about-us">
+            <div class="side-image"><img src="{{ asset('img/home-about.webp') }}" alt="cat"></div>
+            <div class="aside-text d-flex flex-column align-items-start">
+            <p>Each cat undergoes regular veterinary examinations, receives high-quality nutrition, and endless attention. Our care for your future four-legged friend begins right here.
+Every personality is unique, and we proudly present to you our furry individualists. From affectionate cuddlers to unwavering explorers, we have a Maine Coon for every heart.</p>
+            <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            <button>Learn more</button>
+            </div>  
+        </div>
+    </div>
+</div>
+
+<div class="section section-green container-fluid">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
+    <div class="title d-flex flex-column align-items-center justify-content-center">
+    <h2>LITTER A</h2>
+    <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+    <p>10.06.2024</p>
+    </div>
+    </div>
 </div>
 {% endblock %}
