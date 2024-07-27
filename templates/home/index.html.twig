@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<div class="container-fluid d-flex align-items-start justify-content-center home-preview">
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview">
     <div class="logo-group d-flex flex-column align-items-center justify-content-center">
         <h1>GRANDE LINCI* LV</h1>
         <div class="arrow-group d-flex justify-content-between align-items-center">
@@ -14,6 +14,14 @@
         </div>
         <p class="sublogo">Maine Coon and Oriental Cattery</p>
     </div>
+
+    <div class="down-link d-flex flex-column align-items-center justify-content-center">
+    <p>Choose a kitten</p>
+    <img src="{{ asset('img/arrow/down.png') }}" alt="down arrow">
+    </div>
+
+    <div class="position-absolute cat-preview left"><img src="{{ asset('img/cat-1.webp') }}" alt="cat"></div>
+    <div class="position-absolute cat-preview right"><img src="{{ asset('img/cat-2.webp') }}" alt="cat"></div>
 </div>
 <div class="home container-fluid">
 <p>cvdsvcsd</p>
