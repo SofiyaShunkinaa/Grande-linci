@@ -30,20 +30,16 @@
     <p>Welcome to our cozy cattery, where the Maine Coon is not just a breed but an unforgettable story of love, care, and magnificence.</p>
     </div>
 
-    <div class="slider swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper container slider-container">
+        <div class="swiper-wrapper ">
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/1.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/2.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/3.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/4.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/5.webp') }}" alt="slider slide"></div>
+        </div>
+    
+        <div class="swiper-pagination"></div>
     </div>
 </div>
 <div class="section section-white container-fluid">
@@ -53,7 +49,7 @@
         </div>
 
         <div class="section-inner d-flex about-us">
-            <div class="side-image"><img src="{{ asset('img/home-about.webp') }}" alt="cat"></div>
+            <div class="side-image image-container"><img class="shaded-grey" src="{{ asset('img/default.png') }}" alt="cat"></div>
             <div class="aside-text d-flex flex-column align-items-start">
             <p>Each cat undergoes regular veterinary examinations, receives high-quality nutrition, and endless attention. Our care for your future four-legged friend begins right here.
 Every personality is unique, and we proudly present to you our furry individualists. From affectionate cuddlers to unwavering explorers, we have a Maine Coon for every heart.</p>
