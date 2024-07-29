@@ -28,7 +28,7 @@ class Cat
     #[ORM\JoinColumn(nullable: false)]
     private ?Gender $gender = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
     private ?string $imageLink = null;
 
     public function getId(): ?int
