@@ -6,8 +6,11 @@ use App\Repository\KittenRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\StatusType;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: KittenRepository::class)]
+#[Vich\Uploadable]
 class Kitten
 {
     #[ORM\Id]
@@ -39,7 +42,10 @@ class Kitten
     private ?Litter $litter = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
-    private ?string $imageLink = null;
+    private ?string $imageLink = 'default.png`';
+
+    #[Vich\UploadableField(mapping: 'kitten_image', fileNameProperty: 'imageLink')]
+    private ?File $imageFile = null;
 
     public function getId(): ?int
     {
@@ -128,5 +134,15 @@ class Kitten
         $this->imageLink = $imageLink;
 
         return $this;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

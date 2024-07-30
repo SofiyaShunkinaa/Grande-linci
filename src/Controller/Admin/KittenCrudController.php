@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use App\Enum\StatusType;
 
 class KittenCrudController extends AbstractCrudController
@@ -28,6 +30,15 @@ class KittenCrudController extends AbstractCrudController
             AssociationField::new('color'),
             AssociationField::new('kittenStatus'),
             AssociationField::new('litter'),
+            ImageField::new('imageLink')
+                ->setBasePath('/images/cats')
+                ->setUploadDir('public/images/cats')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->onlyOnIndex(),
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->setLabel('Image')
+                ->onlyOnForms(),
         ];
     }
     
