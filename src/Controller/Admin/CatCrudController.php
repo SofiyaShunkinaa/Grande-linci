@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class CatCrudController extends AbstractCrudController
 {
@@ -23,8 +25,15 @@ class CatCrudController extends AbstractCrudController
             TextAreaField::new('description'),
             AssociationField::new('breed'),
             AssociationField::new('gender'),
-            TextField::new('imageLink'),
-
+            ImageField::new('imageLink')
+                ->setBasePath('/images/cats')
+                ->setUploadDir('public/images/cats')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->onlyOnIndex(),
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->setLabel('Image')
+                ->onlyOnForms(),
         ];
     }
     
