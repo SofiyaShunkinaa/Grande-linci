@@ -32,11 +32,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Cats', 'fas fa-list', Cat::class);
-        yield MenuItem::linkToCrud('Colors', 'fas fa-list', Color::class);
-        yield MenuItem::linkToCrud('Guest requests', 'fas fa-list', GuestRequest::class);
-        yield MenuItem::linkToCrud('Kittens', 'fas fa-list', Kitten::class);
-        yield MenuItem::linkToCrud('Liters', 'fas fa-list', Litter::class);
-        yield MenuItem::linkToCrud('Kittens statuses', 'fas fa-list', KittenStatus::class);
+        yield MenuItem::subMenu('Entities', 'fa fa-home')->setSubItems([
+            MenuItem::linkToCrud('Cats', 'fas fa-list', Cat::class),
+            MenuItem::linkToCrud('Colors', 'fas fa-list', Color::class),
+            MenuItem::linkToCrud('Guest requests', 'fas fa-list', GuestRequest::class),
+            MenuItem::linkToCrud('Kittens', 'fas fa-list', Kitten::class),
+            MenuItem::linkToCrud('Liters', 'fas fa-list', Litter::class),
+            MenuItem::linkToCrud('Kittens statuses', 'fas fa-list', KittenStatus::class),
+        ]);
     }
 }
