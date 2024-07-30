@@ -18,9 +18,6 @@
             <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
             <link rel="stylesheet" href="{{ asset('css/variables.css') }}">
         {% endblock %}
-
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body class="vh-100 ">
     <header>
@@ -126,23 +123,8 @@
         {% block body %}{% endblock %}
         </main>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-            const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'horizontal',
-            loop: true,
-            slidesPerView: 2,
-            spaceBetween: 50,
-            autoplay: {
-                delay: 3500,
-            },
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            
-            });
-        </script>
-        
+        {% block javascripts %}
+            <script type="application/javascript" src="{{ asset('js/scripts.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
