@@ -62,11 +62,8 @@ Every personality is unique, and we proudly present to you our furry individuali
 
 <div class="section section-green container-fluid">
     <div class="container d-flex flex-column align-items-center justify-content-center">
-    <div class="title d-flex flex-column align-items-center justify-content-center">
-    <h2>LITTER {{ litter.name }}</h2>
-    <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
-    <p>10.06.2024</p>
-    </div>
+    {% block active_litter %}
+    {% endblock %}
     </div>
 </div>
 {% endblock %}
