@@ -40,5 +40,6 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Liters', 'fas fa-list', Litter::class),
             MenuItem::linkToCrud('Kittens statuses', 'fas fa-list', KittenStatus::class),
         ]);
+        yield MenuItem::linkToRoute('Homepage', 'fa fa-home', 'admin_select_litter');
     }
 }
