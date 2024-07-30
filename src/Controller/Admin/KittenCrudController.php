@@ -27,6 +27,7 @@ class KittenCrudController extends AbstractCrudController
             AssociationField::new('gender'),
             AssociationField::new('color'),
             AssociationField::new('kittenStatus'),
+            AssociationField::new('litter'),
         ];
     }
     

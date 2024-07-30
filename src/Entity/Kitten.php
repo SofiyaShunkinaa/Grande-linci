@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\KittenRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\StatusType;
+use Doctrine\DBAL\Types\Types;
 
 #[ORM\Entity(repositoryClass: KittenRepository::class)]
 class Kitten
@@ -32,6 +33,13 @@ class Kitten
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Color $color = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Litter $litter = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
+    private ?string $imageLink = null;
 
     public function getId(): ?int
     {
@@ -94,6 +102,30 @@ class Kitten
     public function setColor(?Color $color): static
     {
         $this->color = $color;
+
+        return $this;
+    }
+
+    public function getLitter(): ?Litter
+    {
+        return $this->litter;
+    }
+
+    public function setLitter(?Litter $litter): static
+    {
+        $this->litter = $litter;
+
+        return $this;
+    }
+
+    public function getImageLink(): ?string
+    {
+        return $this->imageLink;
+    }
+
+    public function setImageLink(?string $imageLink): static
+    {
+        $this->imageLink = $imageLink;
 
         return $this;
     }
