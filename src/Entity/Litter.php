@@ -32,6 +32,9 @@ class Litter
     #[ORM\JoinColumn(nullable: false)]
     private ?Cat $catFather = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isActive = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -100,5 +103,17 @@ class Litter
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function isActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setActive(?bool $isActive): static
+    {
+        $this->isActive = $isActive;
+
+        return $this;
     }
 }
