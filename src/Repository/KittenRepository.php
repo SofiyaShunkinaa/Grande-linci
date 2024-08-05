@@ -19,13 +19,13 @@ class KittenRepository extends ServiceEntityRepository
        /**
         * @return Kitten[] 
         */
-       public function find4ByLitter($value): array
+       public function find5ByLitter($value): array
        {
            return $this->createQueryBuilder('k')
                ->andWhere('k.litter = :litter')
                ->setParameter('litter', $value)
                ->orderBy('k.id', 'ASC')
-               ->setMaxResults(4)
+               ->setMaxResults(5)
                ->getQuery()
                ->getResult()
            ;

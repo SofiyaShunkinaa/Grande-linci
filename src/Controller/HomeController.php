@@ -24,7 +24,7 @@ class HomeController extends AbstractController
     public function index(LitterRepository $litterRepository, KittenRepository $kittenRepository, CatRepository $catRepository): Response
     {
         $litter = $litterRepository->findOneByIsActive();
-        $kittens = $kittenRepository->find4ByLitter($litter->getId());
+        $kittens = $kittenRepository->find5ByLitter($litter->getId());
         $mom = $catRepository->findOneBy(['id'=>$litter->getCatMother()]);
         $dad = $catRepository->findOneBy(['id'=>$litter->getCatFather()]);
         return $this->render('home/index.html.twig', [
