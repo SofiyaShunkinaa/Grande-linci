@@ -32,7 +32,7 @@ class Cat
     private ?Gender $gender = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
-    private ?string $imageLink = 'default.png`';
+    private ?string $imageLink = 'default.png';
 
     #[Vich\UploadableField(mapping: 'cat_image', fileNameProperty: 'imageLink')]
     private ?File $imageFile = null;

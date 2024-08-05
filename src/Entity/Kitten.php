@@ -42,7 +42,7 @@ class Kitten
     private ?Litter $litter = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
-    private ?string $imageLink = 'default.png`';
+    private ?string $imageLink = 'default.png';
 
     #[Vich\UploadableField(mapping: 'kitten_image', fileNameProperty: 'imageLink')]
     private ?File $imageFile = null;
