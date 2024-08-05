@@ -60,8 +60,8 @@ Every personality is unique, and we proudly present to you our furry individuali
     </div>
 </div>
 
-<div class="section section-green container-fluid">
-    <div class="container d-flex flex-column align-items-center justify-content-center litter">
+<div class="section section-green container-fluid litter">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
             <h2>LITTER {{ litter.name }}</h2>
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
@@ -86,25 +86,42 @@ Every personality is unique, and we proudly present to you our furry individuali
             </div>
             <h3>{{ father.name }}</h3>
         </div>
+        </div>
     </div>
     <div class="section-white container section d-flex flex-wrap section-kittens justify-content-center">
-    {% for kitten in kittens %}
-    <div class="col-3 d-flex flex-column align-items-center">
-        <div class="image-container">
-            <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
-        </div>
-        <h3>{{ kitten.name }}</h3>
-        <div class="kitten-status 
-        {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
-        {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
-        {% if kitten.kittenStatus == 'Available' %}status-available{% endif %}">
-            <span>{{ kitten.kittenStatus }}</span>
-        </div>
-    </div>
-    {% endfor %}
+        {% for kitten in kittens %}
+            <div class="col-3 d-flex flex-column align-items-center">
+                <div class="image-container">
+                    <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
+                </div>
+                <h3>{{ kitten.name }}</h3>
+                <div class="kitten-status 
+                {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
+                {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
+                {% if kitten.kittenStatus == 'Available' %}status-available{% endif %}">
+                    <span>{{ kitten.kittenStatus }}</span>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
 <div class="section section-white">
+    <div class="container">
+        <div class="title">
+        <h2>Contact us</h2>
+        </div>
+
+        <div class="section-inner d-flex">
+            <div class="col-5">
+                <div class="image-container col-10">
+                    <img src="{{ asset('img/cat-contact.webp') }}" alt="cat">
+                </div>
+            </div>
+            <div class="col-7">
+                <p>If you have any questions or cooperation issues, fill out the form and we will contact you!</p>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
