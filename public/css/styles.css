@@ -143,6 +143,9 @@ h3{
 .shaded-grey{
     filter: var(--shadow-grey);
 }
+.shaded-green{
+    filter: var(--shadow-green);
+}
 .about-us .side-image{
     min-width: 292px;
     height: 292px;
@@ -170,4 +173,27 @@ h3{
 }
 .swiper-pagination-bullet-active{
     background: white;
+}
+.litter .image-container{
+    margin-bottom: 20px;
+}
+.section-kittens{
+    column-gap: 20px;
+    row-gap: 70px;
+}
+.kitten-status{
+    padding: 14px 28px;
+    margin-top: 20px;
+}
+.status-home{
+    background: var(--grey-light);
+    color: white;
+}
+.status-available{
+    background: var(--greeт-light-extra);
+    color: white;
+}
+.status-reserved{
+    border: 2px solid var(--grey-light);
+    color: var(--grey-light);
 }
