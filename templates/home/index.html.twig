@@ -61,9 +61,31 @@ Every personality is unique, and we proudly present to you our furry individuali
 </div>
 
 <div class="section section-green container-fluid">
-    <div class="container d-flex flex-column align-items-center justify-content-center">
-    {% block active_litter %}
-    {% endblock %}
+    <div class="container d-flex flex-column align-items-center justify-content-center litter">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>LITTER {{ litter.name }}</h2>
+            <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+            <p>{{ litter.date | date('d.m.Y') }}</p>
+        </div>
+
+        <div class="section-inner d-flex justify-content-center align-items-start litter__parents">
+        <div class="col-4 cat-parent">
+            <div class="image-container">
+                <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
+            </div>
+            <h3>{{ mother.name }}</h3>
+        </div>
+
+        <div class="parent-divider">
+            <img src="{{ asset('img/arrow/litter-divider-lg.png') }}" alt="arrow">
+        </div>
+        
+        <div class="col-4 cat-parent">
+            <div class="image-container">
+                <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
+            </div>
+            <h3>{{ father.name }}</h3>
+        </div>
     </div>
 </div>
 {% endblock %}
