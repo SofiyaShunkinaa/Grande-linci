@@ -197,3 +197,7 @@ h3{
     border: 2px solid var(--grey-light);
     color: var(--grey-light);
 }
+footer{
+    background: var(--grey);
+    color: var(--white);
+}
