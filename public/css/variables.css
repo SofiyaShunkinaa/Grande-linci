@@ -5,4 +5,7 @@
     --grey: #414D52;
     --grey-light: #69777D;
     --white: #FFF9FC;
+
+    --shadow-grey: drop-shadow(0 0 20px var(--grey));
+    --shadow-green: drop-shadow(0 0 20px var(--greeт-light-extra));
 }

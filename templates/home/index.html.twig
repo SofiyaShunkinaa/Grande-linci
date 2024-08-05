@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<div class="container-fluid d-flex align-items-start justify-content-center home-preview">
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview">
     <div class="logo-group d-flex flex-column align-items-center justify-content-center">
         <h1>GRANDE LINCI* LV</h1>
         <div class="arrow-group d-flex justify-content-between align-items-center">
@@ -14,11 +14,94 @@
         </div>
         <p class="sublogo">Maine Coon and Oriental Cattery</p>
     </div>
+
+    <div class="down-link d-flex flex-column align-items-center justify-content-center">
+    <p>Choose a kitten</p>
+    <img src="{{ asset('img/arrow/down.png') }}" alt="down arrow">
+    </div>
+
+    <div class="position-absolute cat-preview left"><img src="{{ asset('img/cat-1.webp') }}" alt="cat"></div>
+    <div class="position-absolute cat-preview right"><img src="{{ asset('img/cat-2.webp') }}" alt="cat"></div>
 </div>
-<div class="home container-fluid">
-<p>cvdsvcsd</p>
+<div class="container-fluid section-green section d-flex flex-column align-items-center justify-content-center">
+    <div class="title d-flex flex-column align-items-center justify-content-center">
+    <h2>Welcome</h2>
+    <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+    <p>Welcome to our cozy cattery, where the Maine Coon is not just a breed but an unforgettable story of love, care, and magnificence.</p>
+    </div>
+
+    <div class="swiper container slider-container">
+        <div class="swiper-wrapper ">
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/1.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/2.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/3.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/4.webp') }}" alt="slider slide"></div>
+            <div class="swiper-slide image-container"><img src="{{ asset('img/slider/5.webp') }}" alt="slider slide"></div>
+        </div>
+    
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
-<div class="home container-fluid">
-<p>cvdsvcsd</p>
+<div class="section section-white container-fluid">
+    <div class="container">
+        <div class="title">
+        <h2>About us</h2>
+        </div>
+
+        <div class="section-inner d-flex about-us">
+            <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="aside-text d-flex flex-column align-items-start">
+            <p>Each cat undergoes regular veterinary examinations, receives high-quality nutrition, and endless attention. Our care for your future four-legged friend begins right here.
+Every personality is unique, and we proudly present to you our furry individualists. From affectionate cuddlers to unwavering explorers, we have a Maine Coon for every heart.</p>
+            <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            <button>Learn more</button>
+            </div>  
+        </div>
+    </div>
+</div>
+
+<div class="section section-green container-fluid">
+    <div class="container d-flex flex-column align-items-center justify-content-center litter">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>LITTER {{ litter.name }}</h2>
+            <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+            <p>{{ litter.date | date('d.m.Y') }}</p>
+        </div>
+
+        <div class="section-inner d-flex justify-content-center align-items-start litter__parents">
+        <div class="col-3 cat-parent d-flex flex-column align-items-center">
+            <div class="image-container shaded-green">
+                <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
+            </div>
+            <h3>{{ mother.name }}</h3>
+        </div>
+
+        <div class="parent-divider">
+            <img src="{{ asset('img/arrow/litter-divider-lg.png') }}" alt="arrow">
+        </div>
+        
+        <div class="col-3 cat-parent d-flex flex-column align-items-center">
+            <div class="image-container shaded-green">
+                <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
+            </div>
+            <h3>{{ father.name }}</h3>
+        </div>
+    </div>
+    <div class="section-white container section d-flex flex-wrap section-kittens justify-content-center">
+    {% for kitten in kittens %}
+    <div class="col-3 d-flex flex-column align-items-center">
+        <div class="image-container">
+            <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
+        </div>
+        <h3>{{ kitten.name }}</h3>
+        <div class="kitten-status 
+        {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
+        {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
+        {% if kitten.kittenStatus == 'Available' %}status-available{% endif %}">
+            <span>{{ kitten.kittenStatus }}</span>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}

@@ -5,8 +5,11 @@ namespace App\Entity;
 use App\Repository\CatRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: CatRepository::class)]
+#[Vich\Uploadable]
 class Cat
 {
     #[ORM\Id]
@@ -28,8 +31,11 @@ class Cat
     #[ORM\JoinColumn(nullable: false)]
     private ?Gender $gender = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $imageLink = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true, options: ["default" => "default.png"])]
+    private ?string $imageLink = 'default.png';
+
+    #[Vich\UploadableField(mapping: 'cat_image', fileNameProperty: 'imageLink')]
+    private ?File $imageFile = null;
 
     public function getId(): ?int
     {
@@ -94,6 +100,16 @@ class Cat
         $this->imageLink = $imageLink;
 
         return $this;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function __toString(): string

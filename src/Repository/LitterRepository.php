@@ -16,6 +16,17 @@ class LitterRepository extends ServiceEntityRepository
         parent::__construct($registry, Litter::class);
     }
 
+    public function findOneByIsActive(): ?Litter
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.isActive = :isActive')
+            ->setParameter('isActive', true)
+            ->orderBy('l.id', 'DESC')
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 //    /**
 //     * @return Litter[] Returns an array of Litter objects
 //     */
@@ -31,13 +42,4 @@ class LitterRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Litter
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

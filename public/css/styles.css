@@ -30,12 +30,10 @@ main{
     background: var(--grey);
 }
 .home-preview{
-    position: absolute;
    height: calc(100vh - 97px);
    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url(../img/background.webp);
    background-size: cover;
    background-repeat: no-repeat;
-   z-index: 1;
    /* filter: brightness(0.7) contrast(1.2); */
 }   
 .home{
@@ -44,8 +42,6 @@ main{
 .logo-group{
     width: 650px;
     margin-top: 140px;
-    overflow: hidden;
-    z-index: 2;
 }
 .logo-group::before{
     content: '';
@@ -80,4 +76,124 @@ h1{
 }
 h1, .arrow-group, p{
     z-index: 2;
+}
+.down-link{
+    margin-bottom: 25px;
+}
+.down-link p{
+    font-size: 20px;
+    text-decoration: underline;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+.cat-preview.left{
+    top: 290px;
+    left: 50px;
+}
+.cat-preview.right{
+    top: 400px;
+    right: 0;
+}
+.section-green{
+    background: var(--green);
+    color: var(--white);
+}
+h2{
+    font-size: 48px;
+}
+.section-green h2{
+    color: var(--green-light);
+}
+.section-white h2{
+    color: var(--grey-light);
+}
+.title p{
+    font-size: 18px;
+    text-align: center;
+}
+.title{
+    width: 660px;
+}
+.section{
+    padding-top: 60px;
+    padding-bottom: 90px;
+}
+h1, h2{
+    text-transform: uppercase;
+}
+h2{
+    font-family: "Cormorant Garamond", serif;
+}
+h3{
+    font-size: 24px;
+}
+.section-white{
+    background-color: var(--white);
+    color: var(--grey-light);
+}
+.section-inner{
+    margin-top: 35px;
+}
+.section-inner.about-us{
+    gap: 87px;
+}
+.section-inner.about-us .aside-text{
+    gap: 35px;
+}
+.shaded-grey{
+    filter: var(--shadow-grey);
+}
+.shaded-green{
+    filter: var(--shadow-green);
+}
+.about-us .side-image{
+    min-width: 292px;
+    height: 292px;
+}
+.image-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.swiper {
+    width: 100%;
+    height: 360px;
+}
+.slider-container{
+    margin-top: 65px;
+}
+.swiper-slide{
+    height: 80%;
+}
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 2px solid white;
+}
+.swiper-pagination-bullet-active{
+    background: white;
+}
+.litter .image-container{
+    margin-bottom: 20px;
+}
+.section-kittens{
+    column-gap: 20px;
+    row-gap: 70px;
+}
+.kitten-status{
+    padding: 14px 28px;
+    margin-top: 20px;
+}
+.status-home{
+    background: var(--grey-light);
+    color: white;
+}
+.status-available{
+    background: var(--greeт-light-extra);
+    color: white;
+}
+.status-reserved{
+    border: 2px solid var(--grey-light);
+    color: var(--grey-light);
 }

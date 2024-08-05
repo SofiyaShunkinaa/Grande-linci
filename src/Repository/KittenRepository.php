@@ -16,20 +16,20 @@ class KittenRepository extends ServiceEntityRepository
         parent::__construct($registry, Kitten::class);
     }
 
-    //    /**
-    //     * @return Kitten[] Returns an array of Kitten objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('k')
-    //            ->andWhere('k.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('k.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+       /**
+        * @return Kitten[] 
+        */
+       public function find5ByLitter($value): array
+       {
+           return $this->createQueryBuilder('k')
+               ->andWhere('k.litter = :litter')
+               ->setParameter('litter', $value)
+               ->orderBy('k.id', 'ASC')
+               ->setMaxResults(5)
+               ->getQuery()
+               ->getResult()
+           ;
+       }
 
     //    public function findOneBySomeField($value): ?Kitten
     //    {

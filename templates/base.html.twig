@@ -10,19 +10,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
             <link rel="stylesheet" href="{{ asset('css/variables.css') }}">
         {% endblock %}
-
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body class="vh-100 ">
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow">
             <div class="container-fluid preheader">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -123,5 +122,9 @@
         <main class="">
         {% block body %}{% endblock %}
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        {% block javascripts %}
+            <script type="application/javascript" src="{{ asset('js/scripts.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
