@@ -36,6 +36,8 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()){
+            $guestRequest->setRequestDate(new \DateTime());
+            
             $this->entityManager->persist($guestRequest);
             $this->entityManager->flush();
 
