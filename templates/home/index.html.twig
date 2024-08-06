@@ -124,9 +124,8 @@ Every personality is unique, and we proudly present to you our furry individuali
                 {{ form_start(form) }}
                     {{ form_row(form.name) }}
                     {{ form_row(form.email) }}
-                    {{ form_row(form.phone) }}
+                    {{ form_row(form.phone, {'attr': {'id': 'phone'}}) }}
                     {{ form_row(form.message) }}
-                    {{ form_row(form.requestDate) }}
 
                     <button class="btn btn-primary">Submit</button>
                 {{ form_end(form) }}
