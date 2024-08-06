@@ -120,6 +120,17 @@ Every personality is unique, and we proudly present to you our furry individuali
             </div>
             <div class="col-7">
                 <p>If you have any questions or cooperation issues, fill out the form and we will contact you!</p>
+                <div class="">
+                {{ form_start(form) }}
+                    {{ form_row(form.name) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.phone) }}
+                    {{ form_row(form.message) }}
+                    {{ form_row(form.requestDate) }}
+
+                    <button class="btn btn-primary">Submit</button>
+                {{ form_end(form) }}
+                </div>
             </div>
         </div>
     </div>
