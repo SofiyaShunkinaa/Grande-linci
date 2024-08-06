@@ -16,9 +16,6 @@ class RequestType extends AbstractType
             ->add('email')
             ->add('phone')
             ->add('message')
-            ->add('requestDate', null, [
-                'widget' => 'single_text',
-            ])
         ;
     }
 
