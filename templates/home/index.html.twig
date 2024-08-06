@@ -73,7 +73,7 @@ Every personality is unique, and we proudly present to you our furry individuali
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
             </div>
-            <h3>{{ mother.name }}</h3>
+            <h4>{{ mother.name }}</h4>
         </div>
 
         <div class="parent-divider">
@@ -84,7 +84,7 @@ Every personality is unique, and we proudly present to you our furry individuali
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
             </div>
-            <h3>{{ father.name }}</h3>
+            <h4>{{ father.name }}</h4>
         </div>
         </div>
     </div>
@@ -94,7 +94,7 @@ Every personality is unique, and we proudly present to you our furry individuali
                 <div class="image-container">
                     <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
                 </div>
-                <h3>{{ kitten.name }}</h3>
+                <h4>{{ kitten.name }}</h4>
                 <div class="kitten-status 
                 {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
                 {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
