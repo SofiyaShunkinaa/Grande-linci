@@ -11,3 +11,8 @@ const swiper = new Swiper('.swiper', {
     },
     
     });
+
+const input = document.querySelector("#request_phone");
+window.intlTelInput(input, {
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/utils.js",
+});    
