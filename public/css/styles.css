@@ -101,6 +101,9 @@ h1, .arrow-group, p{
 h2{
     font-size: 48px;
 }
+h3{
+    font-size: 32px;
+}
 .section-green h2{
     color: var(--green-light);
 }
@@ -124,7 +127,7 @@ h1, h2{
 h2{
     font-family: "Cormorant Garamond", serif;
 }
-h3{
+h4{
     font-size: 24px;
 }
 .section-white{
@@ -200,4 +203,24 @@ h3{
 footer{
     background: var(--grey);
     color: var(--white);
+}
+.footer-logo{
+    width: 340px;
+    font-family: "Charm", cursive;
+}
+.footer-logo p{
+    font-size: 20px;
+}
+footer ul li{
+    margin-bottom: 20px;
+}
+footer h6{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+@media (max-width:992px) {
+    .footer-logo{
+        width: fit-content;
+    } 
 }
