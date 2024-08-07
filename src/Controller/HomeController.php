@@ -5,14 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Entity\Litter;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\LitterRepository;
-use App\Repository\KittenRepository;
-use App\Repository\CatRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\GuestRequest;
 use App\Form\RequestType;
+use App\Service\LitterService;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 class HomeController extends AbstractController
 {
@@ -24,12 +22,12 @@ class HomeController extends AbstractController
     }
 
     #[Route('/', name: 'app_home')]
-    public function index(LitterRepository $litterRepository, KittenRepository $kittenRepository, CatRepository $catRepository, Request $request): Response
+    public function index(LitterService $litterService, Request $request): Response
     {
-        $litter = $litterRepository->findOneByIsActive();
-        $kittens = $kittenRepository->find5ByLitter($litter->getId());
-        $mom = $catRepository->findOneBy(['id'=>$litter->getCatMother()]);
-        $dad = $catRepository->findOneBy(['id'=>$litter->getCatFather()]);
+        $litter = $litterService->getLitter();
+        $kittens = $litterService->getKittens($litter);
+        $mom = $litterService->getMom($litter);
+        $dad = $litterService->getDad($litter);
 
         $guestRequest = new GuestRequest();
         $form = $this->createForm(RequestType::class, $guestRequest);
