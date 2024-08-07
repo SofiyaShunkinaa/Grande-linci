@@ -21,19 +21,13 @@ class LitterService
         $this->catRepository = $catRepository;
     }
 
-    public function getLitter(): ?Litter
+    public function getLitter(): array
     {
-        return $this->litterRepository->findOneByIsActive();
-    }
+        $litter = $this->litterRepository->findOneByIsActive();
+        $mom = $this->catRepository->findOneBy(['id' => $litter->getCatMother()]);
+        $dad = $this->catRepository->findOneBy(['id' => $litter->getCatFather()]);
 
-    public function getMom(Litter $litter): ?Cat
-    {
-        return $this->catRepository->findOneBy(['id' => $litter->getCatMother()]);
-    }
-
-    public function getDad(Litter $litter): ?Cat
-    {
-        return $this->catRepository->findOneBy(['id' => $litter->getCatFather()]);
+        return [$litter, $mom, $dad];
     }
 
     public function get5Kittens(Litter $litter): array
