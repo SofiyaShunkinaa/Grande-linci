@@ -6,41 +6,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\GuestRequest;
 use App\Form\RequestType;
 use App\Service\LitterService;
+use App\Service\GuestRequestService;
 use Doctrine\ORM\EntityManagerInterface;
 
 
 class HomeController extends AbstractController
 {
-    private EntityManagerInterface $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-        $this->entityManager = $entityManager;
-    }
-
     #[Route('/', name: 'app_home')]
-    public function index(LitterService $litterService, Request $request): Response
+    public function index(LitterService $litterService, GuestRequestService $guestRequestService, Request $request): Response
     {
-        $litter = $litterService->getLitter();
-        $kittens = $litterService->getKittens($litter);
-        $mom = $litterService->getMom($litter);
-        $dad = $litterService->getDad($litter);
+        [$litter, $mom, $dad] = $litterService->getLitter();   
+        $kittens = $litterService->get5Kittens($litter);
 
-        $guestRequest = new GuestRequest();
-        $form = $this->createForm(RequestType::class, $guestRequest);
-        $form->handleRequest($request);
-        
-        if($form->isSubmitted() && $form->isValid()){
-            $guestRequest->setRequestDate(new \DateTime());
-            
-            $this->entityManager->persist($guestRequest);
-            $this->entityManager->flush();
-
-            $this->addFlash('success', 'Your request has been submitted successfully.');
-        }
+        $formResult = $guestRequestService->createAndHandleForm($request);
+        $formView = $formResult['form'];
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
@@ -48,7 +29,7 @@ class HomeController extends AbstractController
             'kittens' => $kittens,
             'mother' => $mom,
             'father' => $dad,
-            'form' => $form->createView(),
+            'form' => $form,
         ]);
     }
 }
