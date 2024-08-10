@@ -5,38 +5,34 @@ namespace App\Service;
 use App\Entity\GuestRequest;
 use App\Form\RequestType;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 class GuestRequestService
 {
     private EntityManagerInterface $entityManager;
-    private FormFactoryInterface $formFactory;
-    private FlashBagInterface $flashBag;
+    private Request $request;
 
-    public function __construct(EntityManagerInterface $entityManager, FormFactoryInterface $formFactory, FlashBagInterface $flashBag)
+    public function __construct(EntityManagerInterface $entityManager, Request $request)
     {
         $this->entityManager = $entityManager;
-        $this->formFactory = $formFactory;
-        $this->flashBag = $flashBag;
+        $this->request = $request;
     }
 
-    public function createAndHandleForm(Request $request): array
+    public function createAndHandleForm(): array
     {
         $guestRequest = new GuestRequest();
-        $form = $this->formFactory->create(RequestType::class, $guestRequest);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        $form = $this->createForm(RequestType::class, $guestRequest);
+        $form->handleRequest($this->$request);
+        
+        if($form->isSubmitted() && $form->isValid()){
             $guestRequest->setRequestDate(new \DateTime());
-
+            
             $this->entityManager->persist($guestRequest);
             $this->entityManager->flush();
 
-            $this->flashBag->add('success', 'Your request has been submitted successfully.');
+            $this->addFlash('success', 'Your request has been submitted successfully.');
         }
 
-        return ['form' => $form->createView(), 'guestRequest' => $guestRequest];
+        return ['form' => $form->createView()];
     }
 }
