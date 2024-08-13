@@ -16,6 +16,11 @@ class HomeController extends AbstractController
     public function index(LitterService $litterService, Request $request): Response
     {
         $litterData = $litterService->getLitter();
+
+        $guestRequest = new GuestRequest();
+        $form = $this->createForm(RequestType::class, $guestRequest);
+        $form->handleRequest($request);
+        
         if ($litterData === null) {
             return $this->render('home/index.html.twig', [
                 'controller_name' => 'HomeController',
@@ -29,10 +34,6 @@ class HomeController extends AbstractController
 
         [$litter, $mom, $dad] = $litterService->getLitter();   
         $kittens = $litterService->get5Kittens($litter);
-
-        $guestRequest = new GuestRequest();
-        $form = $this->createForm(RequestType::class, $guestRequest);
-        $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
             $this->entityManager->persist($guestRequest);
