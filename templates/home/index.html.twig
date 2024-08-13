@@ -60,8 +60,10 @@ Every personality is unique, and we proudly present to you our furry individuali
     </div>
 </div>
 
+
 <div class="section section-green container-fluid litter" id="litter-section">
     <div class="container d-flex flex-column align-items-center justify-content-center">
+    {% if litter is not null %}
         <div class="title d-flex flex-column align-items-center justify-content-center">
             <h2>LITTER {{ litter.name }}</h2>
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
@@ -103,8 +105,14 @@ Every personality is unique, and we proudly present to you our furry individuali
                 </div>
             </div>
         {% endfor %}
+        {% else %}
+            <h2>No active litter available!</h2>
+        {% endif %}
     </div>
 </div>
+
+
+
 
 <div class="section section-white">
     <div class="container">
