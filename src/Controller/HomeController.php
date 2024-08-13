@@ -4,35 +4,50 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
-use App\Entity\Litter;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Repository\LitterRepository;
-use App\Repository\KittenRepository;
-use App\Repository\CatRepository;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use App\Service\LitterService;
+use App\Entity\GuestRequest;
+use App\Form\RequestType;
 
 class HomeController extends AbstractController
 {
-    private EntityManagerInterface $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-        $this->entityManager = $entityManager;
-    }
-
     #[Route('/', name: 'app_home')]
-    public function index(LitterRepository $litterRepository, KittenRepository $kittenRepository, CatRepository $catRepository): Response
+    public function index(LitterService $litterService, Request $request): Response
     {
-        $litter = $litterRepository->findOneByIsActive();
-        $kittens = $kittenRepository->find5ByLitter($litter->getId());
-        $mom = $catRepository->findOneBy(['id'=>$litter->getCatMother()]);
-        $dad = $catRepository->findOneBy(['id'=>$litter->getCatFather()]);
+        $litterData = $litterService->getLitter();
+        if ($litterData === null) {
+            return $this->render('home/index.html.twig', [
+                'controller_name' => 'HomeController',
+                'litter' => null,
+                'kittens' => [],
+                'mother' => null,
+                'father' => null,
+                'form' => $form->createView(),
+            ]);
+        }    
+
+        [$litter, $mom, $dad] = $litterService->getLitter();   
+        $kittens = $litterService->get5Kittens($litter);
+
+        $guestRequest = new GuestRequest();
+        $form = $this->createForm(RequestType::class, $guestRequest);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $this->entityManager->persist($guestRequest);
+            $this->entityManager->flush();
+
+            $this->addFlash('success', 'Your request has been submitted successfully.');
+        }
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'litter' => $litter,
             'kittens' => $kittens,
             'mother' => $mom,
             'father' => $dad,
+            'form' => $form->createView(),
         ]);
     }
 }

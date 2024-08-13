@@ -16,7 +16,7 @@
     </div>
 
     <div class="down-link d-flex flex-column align-items-center justify-content-center">
-    <p>Choose a kitten</p>
+    <p><a href="#litter-section" class="text-decoration-none text-white">Choose a kitten</a></p>
     <img src="{{ asset('img/arrow/down.png') }}" alt="down arrow">
     </div>
 
@@ -54,14 +54,14 @@
             <p>Each cat undergoes regular veterinary examinations, receives high-quality nutrition, and endless attention. Our care for your future four-legged friend begins right here.
 Every personality is unique, and we proudly present to you our furry individualists. From affectionate cuddlers to unwavering explorers, we have a Maine Coon for every heart.</p>
             <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
-            <button>Learn more</button>
+            <button class="btn">Learn more</button>
             </div>  
         </div>
     </div>
 </div>
 
-<div class="section section-green container-fluid">
-    <div class="container d-flex flex-column align-items-center justify-content-center litter">
+<div class="section section-green container-fluid litter" id="litter-section">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
             <h2>LITTER {{ litter.name }}</h2>
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
@@ -73,7 +73,7 @@ Every personality is unique, and we proudly present to you our furry individuali
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
             </div>
-            <h3>{{ mother.name }}</h3>
+            <h4>{{ mother.name }}</h4>
         </div>
 
         <div class="parent-divider">
@@ -84,24 +84,54 @@ Every personality is unique, and we proudly present to you our furry individuali
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
             </div>
-            <h3>{{ father.name }}</h3>
+            <h4>{{ father.name }}</h4>
+        </div>
         </div>
     </div>
     <div class="section-white container section d-flex flex-wrap section-kittens justify-content-center">
-    {% for kitten in kittens %}
-    <div class="col-3 d-flex flex-column align-items-center">
-        <div class="image-container">
-            <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
-        </div>
-        <h3>{{ kitten.name }}</h3>
-        <div class="kitten-status 
-        {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
-        {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
-        {% if kitten.kittenStatus == 'Available' %}status-available{% endif %}">
-            <span>{{ kitten.kittenStatus }}</span>
-        </div>
+        {% for kitten in kittens %}
+            <div class="col-3 d-flex flex-column align-items-center">
+                <div class="image-container">
+                    <img src="{{ asset('img/kittens/' ~ kitten.imageLink )}}" alt="kitten">
+                </div>
+                <h4>{{ kitten.name }}</h4>
+                <div class="kitten-status 
+                {% if kitten.kittenStatus == 'At home' %}status-home{% endif %}
+                {% if kitten.kittenStatus == 'Reserved' %}status-reserved{% endif %}
+                {% if kitten.kittenStatus == 'Available' %}status-available{% endif %}">
+                    <span>{{ kitten.kittenStatus }}</span>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+</div>
+
+<div class="section section-white">
+    <div class="container">
+        <div class="title">
+        <h2>Contact us</h2>
+        </div>
+
+        <div class="section-inner d-flex">
+            <div class="col-5">
+                <div class="image-container col-10">
+                    <img src="{{ asset('img/cat-contact.webp') }}" alt="cat">
+                </div>
+            </div>
+            <div class="col-6">
+                <p class="form-desc">If you have any questions or cooperation issues, fill out the form and we will contact you!</p>
+                <div class="col-7 form-wrapper">
+                {{ form_start(form) }}
+                    {{ form_row(form.name) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.phone, {'attr': {'id': 'phone'}}) }}
+                    {{ form_row(form.message) }}
+
+                    <button class="btn btn-primary">Send request</button>
+                {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
