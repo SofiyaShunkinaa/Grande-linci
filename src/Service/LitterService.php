@@ -24,6 +24,11 @@ class LitterService
     public function getLitter(): array
     {
         $litter = $this->litterRepository->findOneByIsActive();
+
+        if (!$litter) {
+            return null;
+        }
+
         $mom = $this->catRepository->findOneBy(['id' => $litter->getCatMother()]);
         $dad = $this->catRepository->findOneBy(['id' => $litter->getCatFather()]);
 
