@@ -4,24 +4,30 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use App\Form\RequestType;
 use App\Service\LitterService;
-use App\Service\GuestRequestService;
-use Doctrine\ORM\EntityManagerInterface;
-
+use App\Entity\GuestRequest;
+use App\Form\RequestType;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(LitterService $litterService, GuestRequestService $guestRequestService, Request $request): Response
+    public function index(LitterService $litterService, Request $request): Response
     {
         [$litter, $mom, $dad] = $litterService->getLitter();   
         $kittens = $litterService->get5Kittens($litter);
 
-        $formResult = $guestRequestService->createAndHandleForm($request);
-        $formView = $formResult['form'];
+        $guestRequest = new GuestRequest();
+        $form = $this->createForm(RequestType::class, $guestRequest);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $this->entityManager->persist($guestRequest);
+            $this->entityManager->flush();
+
+            $this->addFlash('success', 'Your request has been submitted successfully.');
+        }
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
@@ -29,7 +35,7 @@ class HomeController extends AbstractController
             'kittens' => $kittens,
             'mother' => $mom,
             'father' => $dad,
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 }
