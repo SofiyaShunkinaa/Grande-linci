@@ -21,7 +21,7 @@ class LitterService
         $this->catRepository = $catRepository;
     }
 
-    public function getLitter(): array
+    public function getLitter(): ?array
     {
         $litter = $this->litterRepository->findOneByIsActive();
 
