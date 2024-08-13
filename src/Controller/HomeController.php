@@ -15,6 +15,18 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(LitterService $litterService, Request $request): Response
     {
+        $litterData = $litterService->getLitter();
+        if ($litterData === null) {
+            return $this->render('home/index.html.twig', [
+                'controller_name' => 'HomeController',
+                'litter' => null,
+                'kittens' => [],
+                'mother' => null,
+                'father' => null,
+                'form' => $form->createView(),
+            ]);
+        }    
+
         [$litter, $mom, $dad] = $litterService->getLitter();   
         $kittens = $litterService->get5Kittens($litter);
 
