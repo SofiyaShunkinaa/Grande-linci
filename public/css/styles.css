@@ -138,11 +138,26 @@ h4{
 .section-inner{
     margin-top: 35px;
 }
-.section-inner.about-us{
+.section-inner.about-us.home{
     gap: 87px;
+}
+.section-inner.about-us{
+    gap: 130px;
 }
 .section-inner.about-us .aside-text{
     gap: 35px;
+}
+.aside-advantages{
+    gap: 16px;
+}
+.aside-advantages .image-container{
+    width: 570px;
+}
+.aside-advantages p{
+    margin-bottom: 8px;
+}
+.aside-advantages h3{
+    font-family: "Cormorant Garamond", serif;
 }
 .shaded-grey{
     filter: var(--shadow-grey);
@@ -280,6 +295,11 @@ footer .container.p-4{
 .social-links{
     gap: 55px;
     margin-top: 40px;
+}
+.title p.subtext{
+    font-size: 20px;
+    margin-top: 40px;
+    width: 860px;
 }
 
 @media (max-width:992px) {
