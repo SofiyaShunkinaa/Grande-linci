@@ -55,7 +55,7 @@
             </div>
             <div class="container">
                 {# Logo #}
-                <a class="navbar-brand fs-4 logo" href="#">Grande Linci</a>
+                <a class="navbar-brand fs-4 logo" href="{{ path('app_home') }}">Grande Linci</a>
                 {# Toggle btn #}
                 <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_about_us') }}">About us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,7 +111,7 @@
                         </ul>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contacts</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_contacts') }}">Contacts</a>
                     </li>
                     </ul>
                     
