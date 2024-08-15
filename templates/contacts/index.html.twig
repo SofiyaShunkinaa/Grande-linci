@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
+</div>
+<div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img class="image-container col-10" src="{{ asset('img/contacts.webp')}}" alt="cat">
+    </div>
+   
+    <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
+            <h1>Contacts</h1>
+            <div class="arrow-group d-flex justify-content-between align-items-center">
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            <div class="arrow-body"></div>
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            </div>
+        </div>
+    
+</div>
+
+<div class="container-fluid position-absolute z-2 main-content">
+
+<div class="section section-green container-fluid">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>Follow us</h2>
+            <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
+            <div class="d-flex social-links">
+                <div class="social-link">
+                    <a href="#" class="image-container">
+                        <img src="{{ asset('img/icons/inst.svg') }}" alt="social">
+                    </a>
+                </div>
+
+                <div class="social-link">
+                    <a href="#" class="image-container">
+                        <img src="{{ asset('img/icons/facebook.svg') }}" alt="social">
+                    </a>
+                </div>
+
+                <div class="social-link">
+                    <a href="#" class="image-container">
+                        <img src="{{ asset('img/icons/tiktok.svg') }}" alt="social">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'forms/contact_form.html.twig' %}
+{% include 'footer.html.twig' %}
+</div>
+
+{% endblock %}

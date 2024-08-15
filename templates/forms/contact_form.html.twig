@@ -1,0 +1,28 @@
+<div class="section section-white">
+    <div class="container">
+        <div class="title">
+        <h2>Contact us</h2>
+        </div>
+
+        <div class="section-inner d-flex">
+            <div class="col-5">
+                <div class="image-container col-10">
+                    <img src="{{ asset('img/cat-contact.webp') }}" alt="cat">
+                </div>
+            </div>
+            <div class="col-6">
+                <p class="form-desc">If you have any questions or cooperation issues, fill out the form and we will contact you!</p>
+                <div class="col-7 form-wrapper">
+                {{ form_start(form) }}
+                    {{ form_row(form.name) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.phone, {'attr': {'id': 'phone'}}) }}
+                    {{ form_row(form.message) }}
+
+                    <button class="btn btn-primary">Send request</button>
+                {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
