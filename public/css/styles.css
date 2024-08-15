@@ -261,6 +261,26 @@ footer .container.p-4{
     top: 100vh;
     padding: 0;
 }
+.logo-group.blured h1{
+    font-family: "Cormorant Garamond", serif;
+    text-transform: capitalize;
+}
+.logo-group.blured .sublogo{
+    margin: 0;
+}
+.logo-group.blured{
+    backdrop-filter: blur(10px);
+    padding-bottom: 24px;
+    height: fit-content;
+}
+.social-link{
+    width: 55px;
+    height: 55px;
+}
+.social-links{
+    gap: 55px;
+    margin-top: 40px;
+}
 
 @media (max-width:992px) {
     .footer-logo{
