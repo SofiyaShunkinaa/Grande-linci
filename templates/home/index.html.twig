@@ -4,17 +4,19 @@
 
 {% block body %}
 
-<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview">
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
+</div>
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between preview-content position-fixed z-1">
     <div class="logo-group d-flex flex-column align-items-center justify-content-center">
-        <h1>GRANDE LINCI* LV</h1>
-        <div class="arrow-group d-flex justify-content-between align-items-center">
-        <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
-        <div class="arrow-body"></div>
-        <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            <h1>GRANDE LINCI* LV</h1>
+            <div class="arrow-group d-flex justify-content-between align-items-center">
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            <div class="arrow-body"></div>
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            </div>
+            <p class="sublogo">Maine Coon and Oriental Cattery</p>
         </div>
-        <p class="sublogo">Maine Coon and Oriental Cattery</p>
-    </div>
-
+        
     <div class="down-link d-flex flex-column align-items-center justify-content-center">
     <p><a href="#litter-section" class="text-decoration-none text-white">Choose a kitten</a></p>
     <img src="{{ asset('img/arrow/down.png') }}" alt="down arrow">
@@ -23,6 +25,8 @@
     <div class="position-absolute cat-preview left"><img src="{{ asset('img/cat-1.webp') }}" alt="cat"></div>
     <div class="position-absolute cat-preview right"><img src="{{ asset('img/cat-2.webp') }}" alt="cat"></div>
 </div>
+ 
+<div class="container-fluid position-absolute z-2 main-content">
 <div class="container-fluid section-green section d-flex flex-column align-items-center justify-content-center">
     <div class="title d-flex flex-column align-items-center justify-content-center">
     <h2>Welcome</h2>
@@ -141,5 +145,8 @@ Every personality is unique, and we proudly present to you our furry individuali
             </div>
         </div>
     </div>
+</div>
+
+{% include 'footer.html.twig' %}
 </div>
 {% endblock %}
