@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About us{% endblock %}
+
+{% block body %}
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
+</div>
+<div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img class="image-container col-9" src="{{ asset('img/about-us.webp')}}" alt="cat">
+    </div>
+   
+    <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
+            <h1>About us</h1>
+            <div class="arrow-group d-flex justify-content-between align-items-center">
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            <div class="arrow-body"></div>
+            <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            </div>
+        </div>
+    
+</div>
+
+<div class="container-fluid position-absolute z-2 main-content">
+
+<div class="section section-green container-fluid">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>History of Grande linci</h2>
+            <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
+            
+            <p class="subtext">At the heart of our cattery unfolds a remarkable story that began with a love for Maine Coons. As a team, we've dedicated our passion to this noble breed, aspiring to create not just a cattery but a true home for every furry heart. Our journey has been adorned with the joys of births and successes at exhibitions, but the central goal has always been to build a family for our Maine Coons and their future owners. The cattery's history is a tale of love for these magnificent creatures, and we are delighted to share it with you!</p>
+        </div>
+    </div>
+</div>
+
+<div class="section section-white container-fluid">
+    <div class="container">
+        <div class="title">
+        <h2>our advantages</h2>
+        </div>
+
+        <div class="section-inner d-flex about-us justify-content-around">
+            <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="aside-advantages d-flex flex-column align-items-start">
+                <div class="advantage-item d-flex flex-column">
+                    <h3>Full Health</h3>
+                    <p>All our Maine Coons are in excellent health condition and ready to move to a your home.</p>
+                    <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="dark-arrow"></div>
+                </div>
+
+                <div class="advantage-item d-flex flex-column">
+                    <h3>Worldwide</h3>
+                    <p>We offer worldwide delivery, and our graduates are already living in 35 countries!</p>
+                    <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="dark-arrow"></div>
+                </div>
+
+                <div class="advantage-item d-flex flex-column">
+                    <h3>Socialization</h3>
+                    <p>We pay special attention to socialization, making them excellent companions.</p>
+                    <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="dark-arrow"></div>
+                </div>
+
+                <div class="advantage-item d-flex flex-column">
+                    <h3>Care Package</h3>
+                    <p>We pay special attention to socialization, making them excellent companions.</p>
+                    <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="dark-arrow"></div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html.twig' %}
+</div>
+{% endblock %}
