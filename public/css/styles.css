@@ -301,6 +301,13 @@ footer .container.p-4{
     margin-top: 40px;
     width: 860px;
 }
+.section-green .section-inner.about-us .aside-text p{
+    text-align: end;
+}
+.reversed .title{
+    width: 100%;
+    text-align: end;
+}
 
 @media (max-width:992px) {
     .footer-logo{
