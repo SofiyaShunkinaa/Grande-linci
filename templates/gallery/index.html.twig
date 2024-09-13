@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block body %}
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
+</div>
+<div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img class="image-container col-9" src="{{ asset('img/gallery.png')}}" alt="cat">
+    </div>
+   
+    <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
+            <h1>Gallery</h1>
+            <div class="arrow-group d-flex justify-content-between align-items-center">
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+                <div class="arrow-body"></div>
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            </div>
+        </div>
+</div>
+
+<div class="container-fluid position-absolute z-2 main-content">
+
+<div class="section section-green">
+
+    <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>Our Winners</h2>
+            <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+            <p>Witness moments of glory and victory as our Maine Coons splendidly represented our cattery at exhibitions.</p>
+        </div>
+
+        <div class="section-inner d-flex flex-column photo-section">
+            <div class="row">
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="col-6 image-container">
+                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                </div>
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 image-container">
+                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                </div>
+                <div class="col-6 image-container">
+                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="section section-white">
+
+    <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>Our Pride</h2>
+            <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            <p>Our most enchanting and beautiful cats!</p>
+        </div>
+
+        <div class="section-inner d-flex flex-column photo-section">
+            <div class="row">
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                </div>
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="col-3 image-container">
+                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 image-container">
+                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                </div>
+                <div class="col-6 image-container">
+                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 image-container">
+                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                </div>
+                <div class="col-4 image-container">
+                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                </div>
+                <div class="col-4 image-container">
+                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="section section-green">
+
+    <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
+        <div class="title d-flex flex-column align-items-center justify-content-center">
+            <h2>our Graduates</h2>
+            <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
+        </div>
+
+        <div class="section-inner d-flex photo-section vertical-images-container">
+            <div class="col-3 d-flex flex-column ">
+                <div class="image-sm image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="image-md image-container">
+                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                </div>
+            </div>
+
+            <div class="col-3 d-flex flex-column">
+                <div class="image-md image-container">
+                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                </div>
+                <div class="image-sm image-container">
+                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                </div>
+            </div>
+
+            <div class="col-3 d-flex flex-column">
+                <div class="image-sm image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="image-md image-container">
+                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                </div>
+            </div>
+
+            <div class="col-3 d-flex flex-column">
+                <div class="image-lg image-container">
+                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                </div>
+                <div class="image-xs image-container">
+                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html.twig' %}
+</div>
+
+
+{% endblock %}

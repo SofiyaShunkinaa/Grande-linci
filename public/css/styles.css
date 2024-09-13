@@ -301,6 +301,31 @@ footer .container.p-4{
     margin-top: 40px;
     width: 860px;
 }
+.section-green .section-inner.about-us .aside-text p{
+    text-align: end;
+}
+.reversed .title{
+    width: 100%;
+    text-align: end;
+}
+.image-lg{
+    height: 452px;
+}
+.image-md{
+    height: 383px;
+}
+.image-sm{
+    height: 310px;
+}
+.image-xs{
+    height: 241px;
+}
+.photo-section{
+    gap: 20px;
+}
+.vertical-images-container div{
+    gap: 20px;
+}
 
 @media (max-width:992px) {
     .footer-logo{

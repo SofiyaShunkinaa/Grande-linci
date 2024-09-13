@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block body %}
+<div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
+</div>
+<div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img class="image-container col-9" src="{{ asset('img/gallery.png')}}" alt="cat">
+    </div>
+   
+    <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
+            <h1>Gallery</h1>
+            <div class="arrow-group d-flex justify-content-between align-items-center">
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+                <div class="arrow-body"></div>
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+            </div>
+        </div>
+</div>
+
+<div class="container-fluid position-absolute z-2 main-content">
+
+</div>
+{% endblock %}
