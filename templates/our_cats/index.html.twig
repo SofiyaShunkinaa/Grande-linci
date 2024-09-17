@@ -6,21 +6,37 @@
 <div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
 </div>
 <div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
-    <div class="col-6 d-flex justify-content-center align-items-center">
-        <img class="image-container col-9" src="{{ asset('img/gallery.png')}}" alt="cat">
+    <div class="col-6 d-flex justify-content-center align-items-end">
+        <img class="image-container col-9" src="{{ asset('img/our-cats.png')}}" alt="cat">
     </div>
    
     <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
-            <h1>Gallery</h1>
+            <h1>Our cats</h1>
             <div class="arrow-group d-flex justify-content-between align-items-center">
                 <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
                 <div class="arrow-body"></div>
                 <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
             </div>
+            <h2 class="text-capitalize text-white">Main Coons</h2>
         </div>
 </div>
 
 <div class="container-fluid position-absolute z-2 main-content">
+    <div class="section section-white container-fluid">
+        <div class="container">
+            {% if females is not null and males is not null %}
+                {% for i in range(0, count) %}
+                    {% if {{i % 2}} == 0 %}
+                        {% for female in females %}
 
+                        {% endfor %}
+                    {% else %}
+
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+        </div>
+    </div>
 </div>
 {% endblock %}
