@@ -21,9 +21,15 @@ class LitterService
         $this->catRepository = $catRepository;
     }
 
-    public function getLitter(): ?array
+    public function getActiveLitter(): ?Litter
     {
         $litter = $this->litterRepository->findOneByIsActive();
+        return $litter;
+    }
+
+    public function getLitter(): ?array
+    {
+        $litter = $this->getActiveLitter();
 
         if (!$litter) {
             return null;
@@ -38,5 +44,29 @@ class LitterService
     public function get5Kittens(Litter $litter): array
     {
         return $this->kittenRepository->find5ByLitter($litter->getId());
+    }
+
+    public function getAllKittens(Litter $litter): array
+    {
+        return $this->kittenRepository->findAllByLitter($litter->getId());
+    }
+
+    public function getLitterStatus(Litter $litter): bool
+    {
+        $kittens = $this->getAllKittens($litter);
+        $totalCount = count($kittens);
+        $atHomeCount = 0;
+        foreach($kittens as $kitten){
+            if($kitten->getKittenStatus() == 'At home'){
+                $atHomeCount++;
+            }
+        }
+        return $totalCount !== $atHomeCount;
+    }
+
+    public function getAllLitters(): ?array
+    {
+        $litters = $this->litterRepository->findAll();
+        return $litters;
     }
 }
