@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-home', {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 2,
@@ -11,6 +11,20 @@ const swiper = new Swiper('.swiper', {
     },
     
     });
+
+const swiperKittens = new Swiper('.swiper-kittens', {
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 5,
+    spaceBetween: 20,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });    
 
 const input = document.querySelector("#request_phone");
 window.intlTelInput(input, {
