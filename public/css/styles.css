@@ -326,6 +326,18 @@ footer .container.p-4{
 .vertical-images-container div{
     gap: 20px;
 }
+.cat-image{
+    margin-bottom: 20px;
+}
+.cat-card{
+    gap: 70px;
+}
+.cat-card h3{
+    font-family: "Cormorant Garamond", serif;
+}
+.cat-card p{
+    font-size: 20px;
+}
 
 @media (max-width:992px) {
     .footer-logo{
