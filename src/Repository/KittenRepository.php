@@ -31,6 +31,17 @@ class KittenRepository extends ServiceEntityRepository
            ;
        }
 
+       public function findAllByLitter($value): array
+       {
+           return $this->createQueryBuilder('k')
+               ->andWhere('k.litter = :litter')
+               ->setParameter('litter', $value)
+               ->orderBy('k.id', 'ASC')
+               ->getQuery()
+               ->getResult()
+           ;
+       }
+
     //    public function findOneBySomeField($value): ?Kitten
     //    {
     //        return $this->createQueryBuilder('k')
