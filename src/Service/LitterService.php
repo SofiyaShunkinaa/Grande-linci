@@ -41,6 +41,20 @@ class LitterService
         return [$litter, $mom, $dad];
     }
 
+    public function getLitterById(int $id): ?array
+    {
+        $litter = $this->litterRepository->findOneBy(['id' => $id]);
+
+        if (!$litter) {
+            return null;
+        }
+
+        $mom = $this->catRepository->findOneBy(['id' => $litter->getCatMother()]);
+        $dad = $this->catRepository->findOneBy(['id' => $litter->getCatFather()]);
+
+        return [$litter, $mom, $dad];
+    }
+
     public function get5Kittens(Litter $litter): array
     {
         return $this->kittenRepository->find5ByLitter($litter->getId());
