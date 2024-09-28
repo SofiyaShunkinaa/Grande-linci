@@ -35,7 +35,7 @@ function selectLitter(litterId){
     fetch(`/available-kittens/${litterId}`, {
         method: 'GET',
         headers: {
-            'X-Reauested-With': 'XMLHttpRequest'
+            'X-Requested-With': 'XMLHttpRequest'
         }
     })
         .then(response => response.json())
@@ -56,13 +56,16 @@ function selectLitter(litterId){
                     </div>
                 </div>
                 <div class="kittens">
-                    ${data.kittens.map(kitten => `
+                ${data.kittens.map(kitten => {
+                    console.log(kitten);
+                    return `
                         <div class="kitten">
                             <img src="/img/kittens/${kitten.imageLink}" alt="${kitten.name}">
                             <h4>${kitten.name}</h4>
-                            <span class="status ${kitten.kittenStatus.toLowerCase()}">${kitten.kittenStatus}</span>
+                            <span class="status">${kitten.kittenStatus || 'Unknown'}</span>
                         </div>
-                    `).join('')}
+                    `;
+                }).join('')}
                 </div>
             `;
         })
