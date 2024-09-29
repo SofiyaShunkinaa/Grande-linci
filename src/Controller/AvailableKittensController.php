@@ -53,19 +53,20 @@ class AvailableKittensController extends AbstractController
                     return [
                         'name' => $kitten->getName(),
                         'imageLink' => $kitten->getImageLink(),
-                        'kittenStatus' => $kitten->getKittenStatus(),
+                        'kittenStatus' => $kitten->getKittenStatus()->getName(),
                     ];
                 }, $kittens),
             ]);
         }
-
-        return $this->render('available_kittens/index.html.twig', [
-            'controller_name' => 'AvailableKittensController',
-            'buttons' => $buttons,
-            'litter' => $litter,
-            'mother' => $mom,
-            'father' => $dad,
-            'kittens' => $kittens,
-        ]);
+        else{
+            return $this->render('available_kittens/index.html.twig', [
+                'controller_name' => 'AvailableKittensController',
+                'buttons' => $buttons,
+                'litter' => $litter,
+                'mother' => $mom,
+                'father' => $dad,
+                'kittens' => $kittens,
+            ]);
+        }
     }
 }

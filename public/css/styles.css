@@ -193,6 +193,15 @@ h4{
 .swiper-pagination-bullet-active{
     background: white;
 }
+.swiper-kittens .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 2px solid var(--grey-light);
+}
+.swiper-kittens .swiper-pagination-bullet-active{
+    background: var(--grey-light);
+}
 .litter .image-container{
     margin-bottom: 20px;
 }
@@ -359,6 +368,37 @@ footer .container.p-4{
     border: 2px solid var(--green);
     color: var(--green);
 }
+.slider-container.swiper-kittens{
+    margin-top: 35px;
+    padding: 0px 60px;
+}
+.swiper-button-prev, .swiper-button-next{
+    width: 43px; /* Задайте ширину картинки */
+    height: 43px;
+    top: var(--swiper-navigation-top-offset,30%);
+}
+.swiper-button-prev:after{
+    content: ''; /* Убираем стандартную стрелку */
+    display: block; /* Обязательно для отображения изображения */
+    width: 100%; /* Задайте ширину картинки */
+    height: 100%; /* Задайте высоту картинки */
+    background-image: url('/img/icons/slider-arrow.svg'); /* Укажите путь к вашей картинке */
+    background-size: contain; /* Чтобы изображение корректно вписалось в блок */
+    background-repeat: no-repeat; /* Убираем повторение изображения */
+    background-position: center; /* Центрируем изображение */
+}
+.swiper-button-next:after{
+    content: ''; /* Убираем стандартную стрелку */
+    display: block; /* Обязательно для отображения изображения */
+    width: 100%; /* Задайте ширину картинки */
+    height: 100%; /* Задайте высоту картинки */
+    background-image: url('/img/icons/slider-arrow.svg'); /* Укажите путь к вашей картинке */
+    background-size: contain; /* Чтобы изображение корректно вписалось в блок */
+    background-repeat: no-repeat; /* Убираем повторение изображения */
+    background-position: center; /* Центрируем изображение */
+    transform: rotate(180deg);
+}
+
 
 @media (max-width:992px) {
     .footer-logo{

@@ -16,13 +16,14 @@ const swiperKittens = new Swiper('.swiper-kittens', {
     direction: 'horizontal',
     loop: false,
     slidesPerView: 5,
-    spaceBetween: 20,
+    spaceBetween: 60,
     pagination: {
-        el: '.swiper-pagination',
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        el: '.swiper-pagination', // Элемент для пагинации
+        clickable: true,          // Возможность переключения слайдов через пагинацию
+      },
+      navigation: {
+        nextEl: '.swiper-button-next', // Кнопка "вперед"
+        prevEl: '.swiper-button-prev', // Кнопка "назад"
       },
     });    
 
@@ -35,34 +36,58 @@ function selectLitter(litterId){
     fetch(`/available-kittens/${litterId}`, {
         method: 'GET',
         headers: {
-            'X-Reauested-With': 'XMLHttpRequest'
+            'X-Requested-With': 'XMLHttpRequest'
         }
     })
         .then(response => response.json())
         .then(data => {
             document.getElementById('litter-block').innerHTML = `
-                <div class="title">
+                <div class="title d-flex flex-column align-items-center justify-content-center">
                     <h2>LITTER ${data.litter.name}</h2>
+                    <img src="/img/arrow/simple-arrow.png" alt="arrow">
                     <p>${new Date(data.litter.date).toLocaleDateString()}</p>
                 </div>
-                <div class="section-inner">
-                    <div class="cat-parent">
-                        <img src="/img/cats/${data.mother.imageLink}" alt="Mother Cat">
+                <div class="section-inner d-flex justify-content-center align-items-start litter__parents">
+                    <div class="col-3 cat-parent d-flex flex-column align-items-center">
+                        <div class="image-container shaded-green">
+                            <img src="/img/cats/${data.mother.imageLink}" alt="Mother Cat">
+                        </div>
                         <h4>${data.mother.name}</h4>
                     </div>
-                    <div class="cat-parent">
-                        <img src="/img/cats/${data.father.imageLink}" alt="Father Cat">
+                    <div class="parent-divider">
+                        <img src="/img/arrow/litter-divider-lg.png" alt="arrow">
+                    </div>
+                    <div class="col-3 cat-parent d-flex flex-column align-items-center">
+                        <div class="image-container shaded-green">
+                            <img src="/img/cats/${data.father.imageLink}" alt="Mother Cat">
+                        </div>
                         <h4>${data.father.name}</h4>
                     </div>
                 </div>
-                <div class="kittens">
-                    ${data.kittens.map(kitten => `
-                        <div class="kitten">
-                            <img src="/img/kittens/${kitten.imageLink}" alt="${kitten.name}">
+                <div class="section-white container section d-flex flex-wrap section-kittens justify-content-center">
+                ${data.kittens.map(kitten => {
+                    let classStatus = '';
+                    if(kitten.kittenStatus === "At home"){
+                        classStatus = "status-home";
+                    }
+                    else if(kitten.kittenStatus === "Reserved"){
+                        classStatus = "status-reserved";
+                    }
+                    else if(kitten.kittenStatus === "Available"){
+                        classStatus = "status-available";
+                    }
+                    return `
+                        <div class="col-3 d-flex flex-column align-items-center">
+                            <div class="image-container">
+                                <img src="/img/kittens/${kitten.imageLink}" alt="${kitten.name}-kitten">
+                            </div>    
                             <h4>${kitten.name}</h4>
-                            <span class="status ${kitten.kittenStatus.toLowerCase()}">${kitten.kittenStatus}</span>
+                            <div class="kitten-status ${classStatus}">
+                                <span>${kitten.kittenStatus}</span>
+                            </div>    
                         </div>
-                    `).join('')}
+                    `;
+                }).join('')}
                 </div>
             `;
         })
