@@ -53,11 +53,13 @@
         </div>
 
         <div class="section-inner d-flex about-us home">
-            <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="side-image image-container shaded-grey col-md-3"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
             <div class="aside-text d-flex flex-column align-items-start">
             <p>Each cat undergoes regular veterinary examinations, receives high-quality nutrition, and endless attention. Our care for your future four-legged friend begins right here.
 Every personality is unique, and we proudly present to you our furry individualists. From affectionate cuddlers to unwavering explorers, we have a Maine Coon for every heart.</p>
-            <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            <div class="image-container">
+                <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            </div>
             <button class="btn">Learn more</button>
             </div>  
         </div>
@@ -75,18 +77,18 @@ Every personality is unique, and we proudly present to you our furry individuali
         </div>
 
         <div class="section-inner d-flex justify-content-center align-items-start litter__parents">
-        <div class="col-3 cat-parent d-flex flex-column align-items-center">
+        <div class="col-3 col-md-4 cat-parent d-flex flex-column align-items-center">
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
             </div>
             <h4>{{ mother.name }}</h4>
         </div>
 
-        <div class="parent-divider">
+        <div class="parent-divider image-container mb-0">
             <img src="{{ asset('img/arrow/litter-divider-lg.png') }}" alt="arrow">
         </div>
         
-        <div class="col-3 cat-parent d-flex flex-column align-items-center">
+        <div class="col-3 col-md-4 cat-parent d-flex flex-column align-items-center">
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
             </div>
@@ -94,7 +96,7 @@ Every personality is unique, and we proudly present to you our furry individuali
         </div>
         </div>
     </div>
-    <div class="section-white container section d-flex flex-wrap section-kittens justify-content-center">
+    <div class="section-white container custom-container section d-flex flex-wrap section-kittens justify-content-center">
         {% for kitten in kittens %}
             <div class="col-3 d-flex flex-column align-items-center">
                 <div class="image-container">
