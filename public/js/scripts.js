@@ -1,16 +1,35 @@
-const swiper = new Swiper('.swiper-home', {
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 2,
-    spaceBetween: 50,
-    autoplay: {
-        delay: 2000,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-    },
-    
+const screenWidth = window.innerWidth;
+console.log(screenWidth)
+
+if(screenWidth>425) {
+    const swiper = new Swiper('.swiper-home', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 2,
+        spaceBetween: 50,
+        autoplay: {
+            delay: 2000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
     });
+}
+else{
+    const swiper = new Swiper('.swiper-home', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        autoplay: {
+            delay: 2000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+    });
+}
 
 const swiperKittens = new Swiper('.swiper-kittens', {
     direction: 'horizontal',
@@ -27,10 +46,10 @@ const swiperKittens = new Swiper('.swiper-kittens', {
       },
     });    
 
-const input = document.querySelector("#request_phone");
-window.intlTelInput(input, {
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/utils.js",
-});   
+// const input = document.querySelector("#request_phone");
+// window.intlTelInput(input, {
+//     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.8.0/build/js/utils.js",
+// });
 
 function selectLitter(litterId){
     fetch(`/available-kittens/${litterId}`, {
