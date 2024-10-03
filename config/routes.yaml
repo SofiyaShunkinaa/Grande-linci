@@ -1,4 +1,8 @@
 controllers:
+    prefix: 
+        en: /
+        ru: /ru
+        lv: /lv
     resource:
         path: ../src/Controller/
         namespace: App\Controller

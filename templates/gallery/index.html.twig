@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gallery{% endblock %}
+{% block title %}{{ 'Gallery'|trans }}{% endblock %}
 
 {% block body %}
 <div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
@@ -11,7 +11,7 @@
     </div>
    
     <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
-            <h1>Gallery</h1>
+            <h1>{{ 'Gallery'|trans }}</h1>
             <div class="arrow-group d-flex justify-content-between align-items-center">
                 <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
                 <div class="arrow-body"></div>
@@ -26,7 +26,7 @@
 
     <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
-            <h2>Our Winners</h2>
+            <h2>{{ 'Our Winners'|trans }}</h2>
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
             <p>Witness moments of glory and victory as our Maine Coons splendidly represented our cattery at exhibitions.</p>
         </div>
@@ -61,7 +61,7 @@
 
     <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
-            <h2>Our Pride</h2>
+            <h2>{{ 'Our Pride'|trans }}</h2>
             <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
             <p>Our most enchanting and beautiful cats!</p>
         </div>
@@ -111,7 +111,7 @@
 
     <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
-            <h2>our Graduates</h2>
+            <h2>{{ 'Our Graduates'|trans }}</h2>
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
         </div>
 

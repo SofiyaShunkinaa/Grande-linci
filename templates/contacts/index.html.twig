@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contacts{% endblock %}
+{% block title %}{{ 'Contacts'|trans }}{% endblock %}
 
 {% block body %}
 
@@ -12,7 +12,7 @@
     </div>
    
     <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
-            <h1>Contacts</h1>
+            <h1>{{ 'Contacts'|trans }}</h1>
             <div class="arrow-group d-flex justify-content-between align-items-center">
             <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
             <div class="arrow-body"></div>
@@ -27,7 +27,7 @@
 <div class="section section-green container-fluid">
     <div class="container d-flex justify-content-center align-items-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
-            <h2>Follow us</h2>
+            <h2>{{ 'Follow us'|trans }}</h2>
             <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
             <div class="d-flex social-links">
                 <div class="social-link">

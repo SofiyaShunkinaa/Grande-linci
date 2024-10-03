@@ -5,14 +5,15 @@
         </div>
 
         <div class="section-inner d-flex">
-            <div class="col-5">
-                <div class="image-container col-10">
+            <div class="col-lg-5 col-md-4">
+                <div class="image-container col-lg-10 col-md-12">
                     <img src="{{ asset('img/cat-contact.webp') }}" alt="cat">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-1 col-lg-0"></div>
+            <div class="col-lg-6 col-md-8">
                 <p class="form-desc">If you have any questions or cooperation issues, fill out the form and we will contact you!</p>
-                <div class="col-7 form-wrapper">
+                <div class="col-lg-7 col-md-10 form-wrapper">
                 {{ form_start(form) }}
                     {{ form_row(form.name) }}
                     {{ form_row(form.email) }}
