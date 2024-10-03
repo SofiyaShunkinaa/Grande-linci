@@ -35,7 +35,7 @@ main{
    background-size: cover;
    background-repeat: no-repeat;
    filter: brightness(0.8) contrast(1.2);
-}   
+}
 .home{
     height: 350px;
 }
@@ -460,7 +460,14 @@ footer .container.p-4{
 @media (max-width:992px) {
     .footer-logo{
         width: fit-content;
-    } 
+    }
+    .cat-preview.left{
+        width: 18em;
+    }
+    .cat-preview.right{
+        width: 20em;
+        right: 200px;
+    }
 }
 
 @media (max-width:768px){
