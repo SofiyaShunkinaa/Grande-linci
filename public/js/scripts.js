@@ -1,7 +1,7 @@
 const screenWidth = window.innerWidth;
 console.log(screenWidth)
 
-if(screenWidth>425) {
+if(screenWidth>768) {
     const swiper = new Swiper('.swiper-home', {
         direction: 'horizontal',
         loop: true,
