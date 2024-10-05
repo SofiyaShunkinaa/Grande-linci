@@ -74,6 +74,7 @@ h1{
     color: var(--white);
     font-family: "Cormorant Garamond", serif;
     font-size: 36px;
+    text-align: center;
 }
 h1, .arrow-group, p{
     z-index: 2;
@@ -135,9 +136,9 @@ h4{
     background-color: var(--white);
     color: var(--grey-light);
 }
-.section-inner{
-    margin-bottom: 60px;
-}
+/*.section-inner{*/
+/*    margin-bottom: 60px;*/
+/*}*/
 .section-inner.about-us.home{
     gap: 87px;
 }
@@ -508,5 +509,17 @@ footer .container.p-4{
     }
     .section-kittens{
         row-gap: 50px;
+    }
+
+}
+@media (max-width: 650px){
+    .logo-group, .logo-group::before{
+        width: 425px;
+    }
+    .cat-preview.right, .cat-preview.left{
+        width: 14em;
+    }
+    .cat-preview.left{
+        left: 30px;
     }
 }
