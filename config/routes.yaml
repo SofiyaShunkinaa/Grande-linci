@@ -1,7 +1,7 @@
 controllers:
     prefix: 
-        en: /
-        ru: /ru
+        en: /en
+        ru: /
         lv: /lv
     resource:
         path: ../src/Controller/
