@@ -3,7 +3,9 @@
 {% block title %}О нашем питомнике Мейн Кунов | Забота и любовь к кошкам{% endblock %}
 {% block desc %}Мы - любители мейн-кунов! Узнайте о нашем питомнике, философии разведения и том, как мы заботимся о своих пушистых друзьях.{% endblock %}
 {% block keywords %}питомник мейн кун, о нас, забота о кошках{% endblock %}
-
+{% block canonical_url %}
+<link rel="canonical" href="{{ path('app_about_us') }}" />
+{% endblock %}
 {% block body %}
 <div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
 </div>
