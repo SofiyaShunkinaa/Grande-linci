@@ -1,0 +1,74 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Главная страница -->
+    <url>
+        <loc>https://grande-linci.onrender.com/</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>1.00</priority>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/cat-contact.webp</image:loc>
+        </image:image>
+    </url>
+
+    <!-- О нас -->
+    <url>
+        <loc>https://grande-linci.onrender.com/about-us</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/about-us.webp</image:loc>
+        </image:image>
+    </url>
+
+    <!-- Доступные котята -->
+    <url>
+        <loc>https://grande-linci.onrender.com/available-kittens/default</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Наши коты -->
+    <url>
+        <loc>https://grande-linci.onrender.com/our-cats</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/our-cats.png</image:loc>
+        </image:image>
+    </url>
+
+    <!-- Галерея -->
+    <url>
+        <loc>https://grande-linci.onrender.com/gallery</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/gallery.png</image:loc>
+        </image:image>
+    </url>
+
+    <!-- О породе: Мейн-кун -->
+    <url>
+        <loc>https://grande-linci.onrender.com/about-breed/main-coon</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Контакты -->
+    <url>
+        <loc>https://grande-linci.onrender.com/contacts</loc>
+        <lastmod>2024-10-22T15:04:17+00:00</lastmod>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/contacts.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://grande-linci.onrender.com/img/cat-contact.webp</image:loc>
+        </image:image>
+    </url>
+
+</urlset>
