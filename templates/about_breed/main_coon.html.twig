@@ -3,21 +3,23 @@
 {% block title %}О породе Мейн Кун - Уникальные кошки | Особенности и характер{% endblock %}
 {% block desc %}Узнайте все о породе мейн кун: их характеристиках, здоровье и особенностях содержания. Идеальные питомцы для семьи и души!{% endblock %}
 {% block keywords %}порода мейн кун, характеристики, особенности{% endblock %}
-
+{% block canonical_url %}
+    <link rel="canonical" href="{{ path('app_about_main_coon') }}" />
+{% endblock %}
 {% block body %}
 <div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
 </div>
 <div class="container-fluid d-flex align-items-top justify-content-start preview-content position-fixed z-1">
     <div class="col-6 d-flex justify-content-center align-items-center">
-        <img class="image-container col-9" src="{{ asset('img/about-breed.webp')}}" alt="cat">
+        <img class="image-container col-9" src="{{ asset('img/about-us.webp')}}" alt="Main Coon cat">
     </div>
    
     <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
             <h1>{{ 'About breed'|trans }}</h1>
             <div class="arrow-group d-flex justify-content-between align-items-center">
-                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow left end"></div>
                 <div class="arrow-body"></div>
-                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
+                <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow right end"></div>
             </div>
             <h2 class="text-capitalize text-white">{{ 'Main Coons'|trans }}</h2>
         </div>
@@ -25,17 +27,28 @@
 
 <div class="container-fluid position-absolute z-2 main-content">
 
-    <div class="section section-white container-fluid">
+    <div class="section section-green container-fluid">
+        <div class="container">
+            <div class="title d-flex flex-column align-items-center justify-content-center">
+                <h2>{{ 'About_breed.contents.title'|trans }}</h2>
+                <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
+                <ul>
+                <li><a href="#">{{ 'About_breed.main_coons.breed_history.title'|trans }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-white container-fluid" id="breed-history">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Breed history'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.breed_history.title'|trans }}</h2>
             </div>
 
-            <div class="section-inner d-flex about-us home">
-                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="section-inner d-flex about-us">
+                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="История породы мейн кун" title="История породы мейн кун происхождение и развитие"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p>The breed's name translates as "Maine raccoon." While the first term in this phrase is clear ("Maine" from the name of the U.S. state), the second requires clarification. The distinctive striped coloration and fluffy tails of Maine Coons have given rise to a legend among breeders that the breed was created by crossing a member of the cat family with a raccoon.
-While the legend remains just a myth, the term "Coon" (shortened from the English word "raccoon") has nonetheless stuck with the breed.</p>  
+                <p>{{ 'About_breed.main_coons.breed_history.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>
@@ -45,16 +58,15 @@ While the legend remains just a myth, the term "Coon" (shortened from the Englis
     <div class="section section-green container-fluid reversed">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Appearance'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.appearance.title'|trans }}</h2>
             </div>
 
-            <div class="section-inner d-flex about-us home">
+            <div class="section-inner d-flex about-us">
                 <div class="aside-text d-flex flex-column align-items-end">
-                <p>The significant influence of Maine's climate played a crucial role in shaping the appearance of the illustrious Maine Coon family. Surviving the harsh conditions of cold and snowy continental winters without a dense undercoat would be challenging. The wide paw, protected by additional tufts of fur, is also a useful adaptation, aiding in gliding on icy surfaces without sinking into the snow. Moreover, the impressive size proves to be an invaluable advantage in hunting small prey.
-As for modern representatives of the breed, the passion of European breeders for extreme traits has inevitably left its mark. Today's Maine Coons have significantly increased in size, their faces have become even more elongated, and their ears have notably grown.</p>  
+                <p>{{ 'About_breed.main_coons.appearance.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
                 </div> 
-                <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+                <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="Внешность мейн куна большие размеры пушистая шерсть и кисточки на ушах" title="Внешность мейн куна описание крупных кошек с кисточками на ушах"></div>
             </div>
         </div>
     </div>
@@ -62,14 +74,13 @@ As for modern representatives of the breed, the passion of European breeders for
     <div class="section section-white container-fluid">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Character'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.character.title'|trans }}</h2>
             </div>
 
-            <div class="section-inner d-flex about-us home">
-                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="section-inner d-flex about-us">
+                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="Характер мейн кунов дружелюбные спокойные и преданные кошки" title="Характер мейн кунов дружелюбие ум и независимость"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p>Maine Coons are unobtrusive cats and highly value their independence. This trait is particularly pronounced in female individuals. While they are amicable towards tactile contact, attempting to knead or cuddle them might not be successful.
-The period of maximum physical activity for this breed occurs during the first five years of life. Upon reaching this "respectable" age, cats tend to become a bit lazier, preferring passive relaxation over lively games. Upon reaching this "respectable" age, cats tend to become a bit lazier, preferring passive relaxation over lively games.</p>  
+                <p>{{ 'About_breed.main_coons.character.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>
@@ -79,16 +90,15 @@ The period of maximum physical activity for this breed occurs during the first f
     <div class="section section-green container-fluid reversed">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Health and Diseases'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.health.title'|trans }}</h2>
             </div>
 
-            <div class="section-inner d-flex about-us home">
+            <div class="section-inner d-flex about-us">
                 <div class="aside-text d-flex flex-column align-items-end">
-                <p>Among the specific health issues that Maine Coons may be prone to, breeders highlight abscesses, bald patches, hair loss, and dry skin. Excessive use of water procedures, the use of improperly selected shampoos, and inadequate grooming can contribute to these ailments.
-The average lifespan of a Maine Coon is around 12 years, although there are not uncommon cases of cats surpassing the age of 16.</p>  
+                <p>{{ 'About_breed.main_coons.health.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
                 </div> 
-                <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+                <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="Здоровье мейн кунов склонность к наследственным заболеваниям и как их предотвратить" title="Здоровье мейн кунов частые болезни и как за ними ухаживать"></div>
             </div>
         </div>
     </div>
@@ -96,14 +106,13 @@ The average lifespan of a Maine Coon is around 12 years, although there are not 
     <div class="section section-white container-fluid">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Care and Maintenance'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.care.title'|trans }}</h2>
             </div>
 
-            <div class="section-inner d-flex about-us home">
-                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
+            <div class="section-inner d-flex about-us">
+                <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="Содержание и уход за мейн кунами как ухаживать за шерстью и здоровьем питомца" title="Содержание и уход за мейн кунами советы по уходу за шерстью и здоровьем"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p>The ideal living environment for a Maine Coon is a suburban house where the cat can roam freely and satisfy its hunting instincts. However, breeders claim that with proper care from the owner, these cats can adapt well to urban apartment living. Excursions to meadows and forests can be replaced with regular leash walks. 
-If frequent outdoor outings are not feasible, consider acquiring a tall and engaging play structure that can enrich your pet's daily life. If frequent outdoor outings are not feasible, consider acquiring a tall and engaging play structure that can enrich your pet's daily life.</p>  
+                <p>{{ 'About_breed.main_coons.care.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>

@@ -3,7 +3,9 @@
 {% block title %}Галерея Мейн Кунов - Красота и очарование | Наши питомцы{% endblock %}
 {% block desc %}Насладитесь галереей наших мейн кунов! Здесь вы увидите фотографии наших кошек и котят в их естественной среде.{% endblock %}
 {% block keywords %}галерея мейн кун, фотографии, питомцы{% endblock %}
-
+{% block canonical_url %}
+<link rel="canonical" href="{{ path('app_gallery') }}" />
+{% endblock %}
 {% block body %}
 <div class="container-fluid d-flex flex-column align-items-center justify-content-between home-preview position-fixed z-0">
 </div>
@@ -36,22 +38,22 @@
         <div class="section-inner d-flex flex-column photo-section">
             <div class="row">
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="col-6 image-container">
-                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                    <img src="{{ asset('img/win-paul.png')}}" alt="winner 2">
                 </div>
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                    <img src="{{ asset('img/win-cuddy.png')}}" alt="winner 3">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6 image-container">
-                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                    <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
                 <div class="col-6 image-container">
-                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                    <img src="{{ asset('img/win-william.png')}}" alt="winner 5">
                 </div>
             </div>
         </div>
@@ -71,37 +73,37 @@
         <div class="section-inner d-flex flex-column photo-section">
             <div class="row">
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                    <img src="{{ asset('img/win-cuddy.png')}}" alt="winner 3">
                 </div>
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="col-3 image-container">
-                    <img src="{{ asset('img/win-3.png')}}" alt="winner 3">
+                    <img src="{{ asset('img/win-cuddy.png')}}" alt="winner 3">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6 image-container">
-                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                    <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
                 <div class="col-6 image-container">
-                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                    <img src="{{ asset('img/win-william.png')}}" alt="winner 5">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-4 image-container">
-                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                    <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
                 <div class="col-4 image-container">
-                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                    <img src="{{ asset('img/win-william.png')}}" alt="winner 5">
                 </div>
                 <div class="col-4 image-container">
-                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                    <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
             </div>
         </div>
@@ -120,37 +122,37 @@
         <div class="section-inner d-flex photo-section vertical-images-container">
             <div class="col-3 d-flex flex-column ">
                 <div class="image-sm image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="image-md image-container">
-                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                    <img src="{{ asset('img/win-paul.png')}}" alt="winner 2">
                 </div>
             </div>
 
             <div class="col-3 d-flex flex-column">
                 <div class="image-md image-container">
-                    <img src="{{ asset('img/win-4.png')}}" alt="winner 4">
+                    <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
                 <div class="image-sm image-container">
-                    <img src="{{ asset('img/win-5.png')}}" alt="winner 5">
+                    <img src="{{ asset('img/win-william.png')}}" alt="winner 5">
                 </div>
             </div>
 
             <div class="col-3 d-flex flex-column">
                 <div class="image-sm image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="image-md image-container">
-                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                    <img src="{{ asset('img/win-paul.png')}}" alt="winner 2">
                 </div>
             </div>
 
             <div class="col-3 d-flex flex-column">
                 <div class="image-lg image-container">
-                    <img src="{{ asset('img/win-1.png')}}" alt="winner 1">
+                    <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
                 <div class="image-xs image-container">
-                    <img src="{{ asset('img/win-2.png')}}" alt="winner 2">
+                    <img src="{{ asset('img/win-paul.png')}}" alt="winner 2">
                 </div>
             </div>
         </div>

@@ -14,6 +14,12 @@ nav.navbar{
     flex-direction: column;
     padding: 0;
 }
+a{
+    color: black;
+}
+p a{
+    color: white;
+}
 main{
     margin-top: 97px;
 }
