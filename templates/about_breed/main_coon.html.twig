@@ -27,16 +27,28 @@
 
 <div class="container-fluid position-absolute z-2 main-content">
 
-    <div class="section section-white container-fluid">
+    <div class="section section-green container-fluid">
+        <div class="container">
+            <div class="title d-flex flex-column align-items-center justify-content-center">
+                <h2>{{ 'About_breed.contents.title'|trans }}</h2>
+                <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
+                <ul>
+                <li><a href="#">{{ 'About_breed.main_coons.breed_history.title'|trans }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-white container-fluid" id="breed-history">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Breed history'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.breed_history.title'|trans }}</h2>
             </div>
 
             <div class="section-inner d-flex about-us">
                 <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="История породы мейн кун" title="История породы мейн кун происхождение и развитие"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p></p>
+                <p>{{ 'About_breed.main_coons.breed_history.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>
@@ -46,12 +58,12 @@
     <div class="section section-green container-fluid reversed">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Appearance'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.appearance.title'|trans }}</h2>
             </div>
 
             <div class="section-inner d-flex about-us">
                 <div class="aside-text d-flex flex-column align-items-end">
-                <p></p>
+                <p>{{ 'About_breed.main_coons.appearance.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
                 </div> 
                 <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="Внешность мейн куна большие размеры пушистая шерсть и кисточки на ушах" title="Внешность мейн куна описание крупных кошек с кисточками на ушах"></div>
@@ -62,13 +74,13 @@
     <div class="section section-white container-fluid">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Character'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.character.title'|trans }}</h2>
             </div>
 
             <div class="section-inner d-flex about-us">
                 <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="Характер мейн кунов дружелюбные спокойные и преданные кошки" title="Характер мейн кунов дружелюбие ум и независимость"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p></p>
+                <p>{{ 'About_breed.main_coons.character.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>
@@ -78,12 +90,12 @@
     <div class="section section-green container-fluid reversed">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Health and Diseases'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.health.title'|trans }}</h2>
             </div>
 
             <div class="section-inner d-flex about-us">
                 <div class="aside-text d-flex flex-column align-items-end">
-                <p></p>
+                <p>{{ 'About_breed.main_coons.health.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
                 </div> 
                 <div class="side-image image-container shaded-green"><img src="{{ asset('img/default.png') }}" alt="Здоровье мейн кунов склонность к наследственным заболеваниям и как их предотвратить" title="Здоровье мейн кунов частые болезни и как за ними ухаживать"></div>
@@ -94,13 +106,13 @@
     <div class="section section-white container-fluid">
         <div class="container">
             <div class="title">
-            <h2>{{ 'Care and Maintenance'|trans }}</h2>
+            <h2>{{ 'About_breed.main_coons.care.title'|trans }}</h2>
             </div>
 
             <div class="section-inner d-flex about-us">
                 <div class="side-image image-container shaded-grey"><img src="{{ asset('img/default.png') }}" alt="Содержание и уход за мейн кунами как ухаживать за шерстью и здоровьем питомца" title="Содержание и уход за мейн кунами советы по уходу за шерстью и здоровьем"></div>
                 <div class="aside-text d-flex flex-column align-items-start">
-                <p></p>
+                <p>{{ 'About_breed.main_coons.care.text'|trans }}</p>
                 <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
                 </div>  
             </div>
