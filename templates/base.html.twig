@@ -28,17 +28,7 @@
             <link rel="stylesheet" href="{{ asset('css/variables.css') }}">
         {% endblock %}
         <meta name="google-site-verification" content="FrF_OD_MlIKqI0oEMXflB3YwR1yNBeM16Nty1W3NEpE" />
-                
-        <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
-        <script type="application/ld+json">
-        {
-          "@context": "http://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Grande Linci LV",
-          "telephone": "+371(25)614-622",
-          "email": "karoleinga@gmail.com"
-        }
-        </script>
+        {% block microdata %}{% endblock %}        
     </head>
 
     <!-- Google tag (gtag.js) -->
