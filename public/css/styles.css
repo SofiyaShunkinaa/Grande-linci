@@ -20,6 +20,25 @@ a{
 p a{
     color: white;
 }
+button a{
+    text-decoration: none;
+    color: var(--grey-light);
+}
+button.btn:hover{
+    background: var(--green-light);
+    border: 2px solid var(--green-light);
+}
+button.btn:hover a{
+    color: white;
+}
+button.btn:active, :not(.btn-check)+.btn:active{
+    background: var(--green);
+    border: 2px solid var(--green);
+
+}
+button.btn:active a, :not(.btn-check)+.btn:active a{
+    color:white;
+}
 main{
     margin-top: 97px;
 }
