@@ -6,12 +6,12 @@
     --grey-light: #69777D;
     --white: #FFF9FC;
 
-    --shadow-grey: drop-shadow(0 0 20px var(--grey));
-    --shadow-green: drop-shadow(0 0 20px var(--greeт-light-extra));
+    --shadow-grey: drop-shadow(0 0 10px var(--grey));
+    --shadow-green: drop-shadow(0 0 10px var(--greeт-light-extra));
 }
 @media (max-width: 768px) {
     :root {
-        --shadow-grey: drop-shadow(0 0 10px var(--grey));
-        --shadow-green: drop-shadow(0 0 10px var(--greeт-light-extra));
+        --shadow-grey: drop-shadow(0 0 5px var(--grey));
+        --shadow-green: drop-shadow(0 0 5px var(--greeт-light-extra));
     }
 }
