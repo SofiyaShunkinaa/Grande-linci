@@ -448,6 +448,7 @@ footer .container.p-4{
 .breadcrumb-item+.breadcrumb-item::before{
     color: white;
 }
+
 @media (max-width:1024px){
     .section-inner.about-us.home{
         gap: 40px;
