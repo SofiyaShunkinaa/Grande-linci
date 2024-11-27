@@ -51,7 +51,7 @@
             <li itemprop="itemListElement" itemscope
                 itemtype="http://schema.org/ListItem"
                 class="breadcrumb-item active">
-                <a itemprop="item" href="{{ path('app_available_kittens') }}">
+                <a itemprop="item" href="{{ path('app_available_kittens', {id: 'default'}) }}">
                     <span itemprop="name">{{ 'Available kittens'|trans }}</span></a>
                 <meta itemprop="position" content="2" />
             </li>
