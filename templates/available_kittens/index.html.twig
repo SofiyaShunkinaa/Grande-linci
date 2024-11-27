@@ -16,6 +16,24 @@
    
     <div class="logo-group blured d-flex col-6 flex-column align-items-center justify-content-center">
             <h1>{{ 'Available kittens'|trans }}</h1>
+        <nav aria-label="breadcrumb">
+        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+            <li itemprop="itemListElement" itemscope
+                itemtype="http://schema.org/ListItem"
+                class="breadcrumb-item">
+                <a itemprop="item" href="{{ path('app_home') }}">
+                    <span itemprop="name">{{ 'Main'|trans }}</span></a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope
+                itemtype="http://schema.org/ListItem"
+                class="breadcrumb-item active">
+                <a itemprop="item" href="{{ path('app_available_kittens') }}">
+                    <span itemprop="name">{{ 'Available kittens'|trans }}</span></a>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
+        </nav>
             <div class="arrow-group d-flex justify-content-between align-items-center">
                 <div class="arrow-end"><img src="{{ asset('img/arrow/ending.svg') }}" alt="arrow end"></div>
                 <div class="arrow-body"></div>
