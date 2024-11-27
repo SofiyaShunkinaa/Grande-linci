@@ -1,0 +1,14 @@
+<IfModule mod_headers.c>
+    # Кэшировать статические файлы (1 месяц)
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|woff|woff2|ttf|svg)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
