@@ -438,6 +438,16 @@ footer .container.p-4{
 .litter .title{
     margin-bottom: 35px;
 }
+.breadcrumb a{
+    text-decoration: none;
+    color: white;
+}
+.breadcrumb .active a{
+    font-weight: 600;
+}
+.breadcrumb-item+.breadcrumb-item::before{
+    color: white;
+}
 @media (max-width:1024px){
     .section-inner.about-us.home{
         gap: 40px;
