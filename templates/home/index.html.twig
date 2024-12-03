@@ -33,8 +33,8 @@
 <div class="container d-flex flex-column align-items-center justify-content-center">
     <div class="title d-flex flex-column align-items-center justify-content-center">
     <h2>{{ "Welcome"|trans}}</h2>
-    <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
-        <p>
+    <img src="{{ asset('img/arrow/simple-arrow.png') }}" class="arrow-divider--green" alt="arrow">
+        <p class="col-8">
             Добро пожаловать в питомник Grande Linci! Мы рады видеть вас в нашем уютном уголке, где царит любовь и забота о кошках. Здесь вы найдете великолепных мейн кунов и элегантных ориентальных кошек, которые станут верными спутниками и любимцами вашей семьи. Наша цель — создать здоровое и дружелюбное окружение для наших питомцев, а также поделиться с вами красотой и уникальностью этих замечательных пород.
         </p>
     </div>
@@ -54,14 +54,15 @@
     </div>
 <div class="section section-white container-fluid">
     <div class="container">
-        <div class="title">
-        <h2>{{ "About us"|trans }}</h2>
-        </div>
+
 
         <div class="section-inner d-flex about-us home">
             <div class="side-image image-container shaded-grey col-md-3"><img src="{{ asset('img/default.png') }}" alt="cat"></div>
             <div class="aside-text d-flex flex-column align-items-start">
-            <p>
+                <div class="title">
+                    <h2>{{ "About us"|trans }}</h2>
+                </div>
+                <p>
                 Grande Linci — это питомник в Риге, который специализируется на разведении мейн кунов и ориентальных кошек. Мы с гордостью занимаемся селекцией и заботой о наших питомцах, обеспечивая им высочайший уровень жизни и здоровья. Наши кошки отличаются великолепным характером, яркой внешностью и, что не менее важно, крепким здоровьем. Мы стремимся к тому, чтобы каждая семья, принявшая в дом одного из наших котят, ощутила всю радость общения с этими удивительными существами.
             </p>
             <div class="image-container">
