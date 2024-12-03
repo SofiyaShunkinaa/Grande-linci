@@ -126,7 +126,8 @@ h1, .arrow-group, p{
     color: var(--white);
 }
 h2{
-    font-size: 48px;
+    font-size: 72px;
+    line-height: 1;
 }
 h3{
     font-size: 32px;
@@ -166,6 +167,7 @@ h4{
 /*}*/
 .section-inner.about-us.home{
     gap: 87px;
+    height: auto;
 }
 .section-inner.about-us{
     gap: 130px;
@@ -186,10 +188,10 @@ h4{
     font-family: "Cormorant Garamond", serif;
 }
 .shaded-grey{
-    filter: var(--shadow-grey);
+    /*filter: var(--shadow-grey);*/
 }
 .shaded-green{
-    filter: var(--shadow-green);
+    /*filter: var(--shadow-green);*/
 }
 .about-us .side-image{
     min-width: 292px;
@@ -447,6 +449,15 @@ footer .container.p-4{
 }
 .breadcrumb-item+.breadcrumb-item::before{
     color: white;
+}
+.arrow-divider--green{
+    margin-bottom: 35px;
+}
+p{
+    font-size: 18px;
+}
+.title.ungapped{
+    margin-bottom: 35px;
 }
 @media (max-width:1024px){
     .section-inner.about-us.home{
