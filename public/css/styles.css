@@ -176,7 +176,7 @@ h4{
     gap: 35px;
 }
 .aside-advantages{
-    gap: 16px;
+    gap: 20px;
 }
 .aside-advantages .image-container{
     width: 570px;
@@ -456,8 +456,15 @@ footer .container.p-4{
 p{
     font-size: 18px;
 }
-.title.ungapped{
+.ungapped{
     margin-bottom: 35px;
+}
+.gallery.main-content .title{
+    gap: 35px;
+    margin-bottom: 45px;
+}
+.contacts.main-content .section-green h2{
+    text-align: center;
 }
 @media (max-width:1024px){
     .section-inner.about-us.home{
@@ -528,6 +535,15 @@ p{
         width: 20em;
         right: 1.5em;
     }
+    .about-us .side-image{
+        display: none;
+    }
+    .title p.subtext{
+        width: auto;
+    }
+    .section-green h2{
+        text-align: center;
+    }
 }
 
 @media (max-width:768px){
@@ -553,10 +569,19 @@ p{
     .litter .section-inner{
         gap: 45px;
     }
+    .litter .section-inner:last-child{
+        margin-bottom: 45px;
+    }
     .section-kittens{
         row-gap: 50px;
     }
-
+    .cat-card{
+        flex-direction: column;
+        gap: 35px;
+    }
+    .image-sm, .image-xs{
+        height: auto;
+    }
 }
 @media (max-width: 650px){
     .logo-group, .logo-group::before{
@@ -567,5 +592,13 @@ p{
     }
     .cat-preview.left{
         left: 30px;
+    }
+    .aside-advantages .image-container{
+        width: auto;
+    }
+}
+@media (max-width: 448px){
+    .title p{
+        text-align: left;
     }
 }
