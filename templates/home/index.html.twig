@@ -32,9 +32,9 @@
     <div class=" section-green section">
 <div class="container d-flex flex-column align-items-center justify-content-center">
     <div class="title d-flex flex-column align-items-center justify-content-center">
-    <h2>{{ "Welcome"|trans}}</h2>
+    <h2 class="ungapped">{{ "Welcome"|trans}}</h2>
     <img src="{{ asset('img/arrow/simple-arrow.png') }}" class="arrow-divider--green" alt="arrow">
-        <p class="col-8">
+        <p class="col-sm-12 col-md-8">
             Добро пожаловать в питомник Grande Linci! Мы рады видеть вас в нашем уютном уголке, где царит любовь и забота о кошках. Здесь вы найдете великолепных мейн кунов и элегантных ориентальных кошек, которые станут верными спутниками и любимцами вашей семьи. Наша цель — создать здоровое и дружелюбное окружение для наших питомцев, а также поделиться с вами красотой и уникальностью этих замечательных пород.
         </p>
     </div>
@@ -86,7 +86,7 @@
 
         <div class="d-flex d-md-block">
             <div class="section-inner d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-start litter__parents">
-        <div class="d-flex d-md-block col-lg-3 col-md-4"><div class="col-10 cat-parent d-flex flex-column align-items-center">
+        <div class="d-flex d-md-block col-lg-3 col-md-4"><div class="col-sm-10 col-md-12 cat-parent d-flex flex-column align-items-center">
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ mother.imageLink )}}" alt="Cat mother">
             </div>
@@ -97,7 +97,7 @@
             <img src="{{ asset('img/arrow/litter-divider-lg.png') }}" alt="arrow">
         </div>
         <div class="d-flex d-md-block col-lg-3 col-md-4">
-        <div class=" col-10 cat-parent d-flex flex-column align-items-center">
+        <div class="col-sm-10 col-md-12 cat-parent d-flex flex-column align-items-center">
             <div class="image-container shaded-green">
                 <img src="{{ asset('img/cats/' ~ father.imageLink )}}" alt="Cat father">
             </div>
