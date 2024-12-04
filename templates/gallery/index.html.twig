@@ -40,7 +40,7 @@
         </div>
 </div>
 
-<div class="container-fluid position-absolute z-2 main-content">
+<div class="container-fluid position-absolute z-2 main-content gallery">
 
 <div class="section section-green">
 
@@ -82,7 +82,7 @@
     <div class="container d-flex justify-content-center d-flex flex-column align-items-center">
         <div class="title d-flex flex-column align-items-center justify-content-center">
             <h2>{{ 'Our Pride'|trans }}</h2>
-            <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
+            <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow"></div>
             <p>Our most enchanting and beautiful cats!</p>
         </div>
 
@@ -135,8 +135,8 @@
             <img src="{{ asset('img/arrow/simple-arrow.png') }}" alt="arrow">
         </div>
 
-        <div class="section-inner d-flex photo-section vertical-images-container">
-            <div class="col-3 d-flex flex-column ">
+        <div class="section-inner d-flex flex-md-row flex-column photo-section vertical-images-container">
+            <div class="col-sm-12 col-md-3 d-flex flex-md-column flex-sm-row">
                 <div class="image-sm image-container">
                     <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
@@ -145,7 +145,7 @@
                 </div>
             </div>
 
-            <div class="col-3 d-flex flex-column">
+            <div class="col-sm-12 col-md-3 d-flex flex-md-column flex-sm-row">
                 <div class="image-md image-container">
                     <img src="{{ asset('img/win-charlz.png')}}" alt="winner 4">
                 </div>
@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="col-3 d-flex flex-column">
+            <div class="col-sm-12 col-md-3 d-flex flex-md-column flex-sm-row">
                 <div class="image-sm image-container">
                     <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
@@ -163,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="col-3 d-flex flex-column">
+            <div class="col-sm-12 col-md-3 d-flex flex-md-column flex-sm-row">
                 <div class="image-lg image-container">
                     <img src="{{ asset('img/win-miky.png')}}" alt="winner 1">
                 </div>
