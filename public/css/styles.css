@@ -126,7 +126,8 @@ h1, .arrow-group, p{
     color: var(--white);
 }
 h2{
-    font-size: 48px;
+    font-size: 72px;
+    line-height: 1;
 }
 h3{
     font-size: 32px;
@@ -166,6 +167,7 @@ h4{
 /*}*/
 .section-inner.about-us.home{
     gap: 87px;
+    height: auto;
 }
 .section-inner.about-us{
     gap: 130px;
@@ -174,7 +176,7 @@ h4{
     gap: 35px;
 }
 .aside-advantages{
-    gap: 16px;
+    gap: 20px;
 }
 .aside-advantages .image-container{
     width: 570px;
@@ -186,10 +188,10 @@ h4{
     font-family: "Cormorant Garamond", serif;
 }
 .shaded-grey{
-    filter: var(--shadow-grey);
+    /*filter: var(--shadow-grey);*/
 }
 .shaded-green{
-    filter: var(--shadow-green);
+    /*filter: var(--shadow-green);*/
 }
 .about-us .side-image{
     min-width: 292px;
@@ -448,7 +450,22 @@ footer .container.p-4{
 .breadcrumb-item+.breadcrumb-item::before{
     color: white;
 }
-
+.arrow-divider--green{
+    margin-bottom: 35px;
+}
+p{
+    font-size: 18px;
+}
+.ungapped{
+    margin-bottom: 35px;
+}
+.gallery.main-content .title{
+    gap: 35px;
+    margin-bottom: 45px;
+}
+.contacts.main-content .section-green h2{
+    text-align: center;
+}
 @media (max-width:1024px){
     .section-inner.about-us.home{
         gap: 40px;
@@ -518,6 +535,15 @@ footer .container.p-4{
         width: 20em;
         right: 1.5em;
     }
+    .about-us .side-image{
+        display: none;
+    }
+    .title p.subtext{
+        width: auto;
+    }
+    .section-green h2{
+        text-align: center;
+    }
 }
 
 @media (max-width:768px){
@@ -543,10 +569,19 @@ footer .container.p-4{
     .litter .section-inner{
         gap: 45px;
     }
+    .litter .section-inner:last-child{
+        margin-bottom: 45px;
+    }
     .section-kittens{
         row-gap: 50px;
     }
-
+    .cat-card{
+        flex-direction: column;
+        gap: 35px;
+    }
+    .image-sm, .image-xs{
+        height: auto;
+    }
 }
 @media (max-width: 650px){
     .logo-group, .logo-group::before{
@@ -557,5 +592,13 @@ footer .container.p-4{
     }
     .cat-preview.left{
         left: 30px;
+    }
+    .aside-advantages .image-container{
+        width: auto;
+    }
+}
+@media (max-width: 448px){
+    .title p{
+        text-align: left;
     }
 }

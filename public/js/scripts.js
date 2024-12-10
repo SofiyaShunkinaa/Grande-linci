@@ -15,6 +15,53 @@ if(screenWidth>768) {
         },
 
     });
+
+    if(screenWidth>1200) {
+        const swiperKittens = new Swiper('.swiper-kittens', {
+            direction: 'horizontal',
+            loop: false,
+            slidesPerView: 5,
+            spaceBetween: 60,
+            pagination: {
+                el: '.swiper-pagination', // Элемент для пагинации
+                clickable: true,          // Возможность переключения слайдов через пагинацию
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Кнопка "вперед"
+                prevEl: '.swiper-button-prev', // Кнопка "назад"
+            },
+        });
+    }else if(screenWidth>992){
+        const swiperKittens = new Swiper('.swiper-kittens', {
+            direction: 'horizontal',
+            loop: false,
+            slidesPerView: 4,
+            spaceBetween: 60,
+            pagination: {
+                el: '.swiper-pagination', // Элемент для пагинации
+                clickable: true,          // Возможность переключения слайдов через пагинацию
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Кнопка "вперед"
+                prevEl: '.swiper-button-prev', // Кнопка "назад"
+            },
+        });
+    } else{
+        const swiperKittens = new Swiper('.swiper-kittens', {
+            direction: 'horizontal',
+            loop: false,
+            slidesPerView: 3,
+            spaceBetween: 60,
+            pagination: {
+                el: '.swiper-pagination', // Элемент для пагинации
+                clickable: true,          // Возможность переключения слайдов через пагинацию
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Кнопка "вперед"
+                prevEl: '.swiper-button-prev', // Кнопка "назад"
+            },
+        });
+    }
 }
 else{
     const swiper = new Swiper('.swiper-home', {
@@ -29,22 +76,24 @@ else{
         },
 
     });
+
+    const swiperKittens = new Swiper('.swiper-kittens', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 5,
+        spaceBetween: 60,
+        pagination: {
+            el: '.swiper-pagination', // Элемент для пагинации
+            clickable: true,          // Возможность переключения слайдов через пагинацию
+        },
+        navigation: {
+            nextEl: '.swiper-button-next', // Кнопка "вперед"
+            prevEl: '.swiper-button-prev', // Кнопка "назад"
+        },
+    });
 }
 
-const swiperKittens = new Swiper('.swiper-kittens', {
-    direction: 'horizontal',
-    loop: false,
-    slidesPerView: 5,
-    spaceBetween: 60,
-    pagination: {
-        el: '.swiper-pagination', // Элемент для пагинации
-        clickable: true,          // Возможность переключения слайдов через пагинацию
-      },
-      navigation: {
-        nextEl: '.swiper-button-next', // Кнопка "вперед"
-        prevEl: '.swiper-button-prev', // Кнопка "назад"
-      },
-    });    
+
 
 // const input = document.querySelector("#request_phone");
 // window.intlTelInput(input, {

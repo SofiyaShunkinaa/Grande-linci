@@ -46,36 +46,43 @@
 </div>
 
 <div class="container-fluid position-absolute z-2 main-content">
-        
             {% for cat in cats %}
                     <div class="section {% if loop.index0%2 == 0 %} section-white {% else %} section-green {% endif %}  container-fluid">
                         <div class="container">
                             <div class="d-flex flex-wrap">
                             {% if cat.female %}
-                                <div class="col-10 d-flex justify-content-between cat-card ">
-                                    <div class="d-flex flex-column align-items-center col-3">
+                                <div class="col-12 d-flex justify-content-between cat-card ">
+                                    <div class="d-flex flex-column align-items-center col-sm-6 col-md-3">
                                         <div class="side-image image-container {% if loop.index0%2 == 0 %} shaded-grey {% else %} shaded-green {% endif %} cat-image">
                                             <img src="{{ asset('img/cats/' ~ cat.female.imageLink )}}" alt="cat">
                                         </div>
                                         <h3>{{ cat.female.name }}</h3>
                                     </div>
-                                    <div class="aside-text d-flex flex-column align-items-start col-9">
+                                    <div class="aside-text d-flex flex-column align-items-start col-sm-12 col-md-9">
                                         <p>{{ cat.female.description }}</p>
-                                        <img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow">
-                                    </div>  
+                                        {% if loop.index0%2 == 0 %}
+                                            <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow"></div>
+                                        {% else %}
+                                            <div class="image-container"><img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow"></div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             {% endif %}
                             {% if cat.male %}
-                                <div class="col-10 d-flex justify-content-between cat-card ">
-                                    <div class="d-flex flex-column align-items-center col-3">
+                                <div class="col-12 d-flex justify-content-between cat-card ">
+                                    <div class="d-flex flex-column align-items-center col-sm-6 col-md-3">
                                         <div class="side-image image-container {% if loop.index0%2 == 0 %} shaded-grey {% else %} shaded-green {% endif %} cat-image">
                                             <img src="{{ asset('img/cats/' ~ cat.male.imageLink )}}" alt="cat">
                                         </div>
                                         <h3>{{ cat.male.name }}</h3>
                                     </div>
-                                    <div class="aside-text d-flex flex-column align-items-start col-9">
+                                    <div class="aside-text d-flex flex-column align-items-start col-sm-12 col-md-9">
                                         <p>{{ cat.male.description }}</p>
-                                        <img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow">
+                                        {% if loop.index0%2 == 0 %}
+                                            <div class="image-container"><img src="{{ asset('img/arrow/dark-arrow.png') }}" alt="arrow"></div>
+                                        {% else %}
+                                            <div class="image-container"><img src="{{ asset('img/arrow/long-arrow.png') }}" alt="arrow"></div>
+                                        {% endif %}
                                     </div>  
                                 </div>
                             {% endif %}
